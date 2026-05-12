@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "San Francisco", sans-serif;
+}
+
+body {
+  background-color: #000; /* Apple Pro Dark Aesthetic */
+  color: #f5f5f7;
+  overflow-x: hidden;
+}
