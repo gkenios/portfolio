@@ -1,11 +1,5 @@
-import { type BezierDefinition, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { EducationEntry } from '../types';
-
-const ease: BezierDefinition = [0.25, 0.1, 0.25, 1];
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } }
-};
 
 type EducationProps = {
   educationEntries: EducationEntry[];
@@ -13,33 +7,63 @@ type EducationProps = {
 
 export function Education({ educationEntries }: EducationProps) {
   return (
-    <section className="py-32 px-6 bg-[#0a0a0a]">
-      <div className="max-w-4xl mx-auto text-center">
-        <motion.h3 
-          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-          className="text-4xl md:text-6xl font-bold tracking-tight mb-12"
+    <section className="py-28 px-6 md:px-12 lg:px-20 bg-[#050505]">
+      <div className="max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-16"
         >
-          Education.
-        </motion.h3>
-        {educationEntries.map((entry, index) => (
-          <motion.div 
-            key={index
-            } initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-            className="bg-[#1c1c1e] p-10 rounded-3xl inline-block text-left w-full max-w-2xl mb-12"
-          >
-            <h4 className="text-2xl font-semibold mb-2">{entry.degree}</h4>
-            <h5 className="text-lg text-gray-400 mb-4">{entry.university} • {entry.startYear} — {entry.endYear}</h5>
-            {entry.description && (
-              <ul className="list-disc list-inside space-y-1">
-                {entry.description.map((line, i) => (
-                  <li key={i} className="text-gray-400 text-lg">
-                    {line}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </motion.div>
-        ))}
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#F59E0B] mb-3">
+            Education
+          </p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
+            Academic background.
+          </h2>
+        </motion.div>
+
+        <div className="divide-y divide-[#111]">
+          {educationEntries.map((entry, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.08 }}
+              className="py-10 grid grid-cols-1 md:grid-cols-[176px_1fr] gap-8 md:gap-16"
+            >
+              {/* Years */}
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-700 mb-1">
+                  Period
+                </p>
+                <p className="text-sm text-gray-400">
+                  {entry.startYear} — {entry.endYear}
+                </p>
+              </div>
+
+              {/* Degree */}
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#F59E0B] mb-1">
+                  {entry.university}
+                </p>
+                <h3 className="text-xl font-bold">{entry.degree}</h3>
+                {entry.description && entry.description.length > 0 && (
+                  <ul className="mt-3 space-y-1">
+                    {entry.description.map((line, i) => (
+                      <li key={i} className="flex gap-3 text-sm text-gray-500">
+                        <span className="text-[#F59E0B]/50 mt-0.5 shrink-0">—</span>
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

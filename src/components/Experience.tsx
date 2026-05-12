@@ -1,17 +1,13 @@
-import { type BezierDefinition, motion } from 'framer-motion';
-import { type ExperienceEntry, type NormalExperienceEntry } from '../types';
-
-const ease: BezierDefinition = [0.25, 0.1, 0.25, 1];
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } },
-};
+import { motion } from 'framer-motion';
+import type { ExperienceEntry, NormalExperienceEntry } from '../types';
 
 type ExperienceProps = {
   experienceEntries: ExperienceEntry[];
 };
 
-function formatPeriod(entry: ExperienceEntry): string {
+function formatPeriod(
+  entry: Pick<NormalExperienceEntry, 'startMonth' | 'startYear' | 'endMonth' | 'endYear'>
+): string {
   const start = entry.startMonth ? `${entry.startMonth} ${entry.startYear}` : `${entry.startYear}`;
   const end =
     entry.endYear === 'Present'
@@ -22,81 +18,95 @@ function formatPeriod(entry: ExperienceEntry): string {
   return `${start} — ${end}`;
 }
 
-function SubEntry({ entry }: { entry: NormalExperienceEntry }) {
+function ProjectCard({ project }: { project: NormalExperienceEntry }) {
   return (
-    <div>
-      <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-1">
-        <h5 className="text-2xl md:text-3xl font-semibold">{entry.role}</h5>
-        <span className="text-gray-500 font-medium mt-2 md:mt-0">{formatPeriod(entry)}</span>
+    <div className="border-l border-[#F59E0B]/20 pl-5 py-0.5">
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
+        <div>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#F59E0B]/60 mb-0.5">
+            {project.company}
+          </p>
+          <h4 className="text-base font-semibold">{project.role}</h4>
+        </div>
+        <p className="text-xs text-gray-600 whitespace-nowrap">{formatPeriod(project)}</p>
       </div>
-      <p className="text-xl text-blue-400 mb-4">{entry.company}</p>
-      <ul className="list-disc list-inside space-y-1">
-        {entry.description.map((line, i) => (
-          <li key={i} className="text-gray-400 text-lg">
-            {line}
-          </li>
-        ))}
-      </ul>
+      {project.description.length > 0 && (
+        <ul className="space-y-1.5">
+          {project.description.map((line, i) => (
+            <li key={i} className="flex gap-2.5 text-sm text-gray-500">
+              <span className="text-[#F59E0B]/40 mt-0.5 shrink-0">›</span>
+              <span>{line}</span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
 
 export function Experience({ experienceEntries }: ExperienceProps) {
   return (
-    <section className="py-32 px-6">
-      <div className="max-w-4xl mx-auto">
-        <motion.h3
-          initial="hidden"
-          whileInView="visible"
+    <section className="py-28 px-6 md:px-12 lg:px-20">
+      <div className="max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          variants={fadeUp}
-          className="text-4xl md:text-6xl font-bold tracking-tight mb-16"
+          transition={{ duration: 0.7 }}
+          className="mb-16"
         >
-          Experience.
-        </motion.h3>
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#F59E0B] mb-3">
+            Experience
+          </p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
+            Where I've worked.
+          </h2>
+        </motion.div>
 
-        <div className="space-y-12">
+        <div className="divide-y divide-[#111]">
           {experienceEntries.map((entry, index) => (
             <motion.div
               key={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className="border-b border-[#333] pb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6 }}
+              className="py-12 grid grid-cols-1 md:grid-cols-[176px_1fr] gap-8 md:gap-16"
             >
-              <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-4">
-                <h4 className="text-2xl md:text-3xl font-semibold">{entry.role}</h4>
-                <span className="text-gray-500 font-medium mt-2 md:mt-0">
-                  {formatPeriod(entry)}
-                </span>
+              {/* Metadata */}
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-700 mb-1">
+                  Duration
+                </p>
+                <p className="text-sm text-gray-400">{formatPeriod(entry)}</p>
               </div>
-              <h5 className="text-xl text-blue-500 mb-4">{entry.company}</h5>
 
-              {'projects' in entry ? (
-                <>
-                  <ul className="list-disc list-inside space-y-1 mb-6">
+              {/* Content */}
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#F59E0B] mb-1">
+                  {entry.company}
+                </p>
+                <h3 className="text-2xl font-bold mb-5">{entry.role}</h3>
+
+                {entry.description.length > 0 && (
+                  <ul className="space-y-2 mb-8">
                     {entry.description.map((line, i) => (
-                      <li key={i} className="text-gray-400 text-base">
-                        {line}
+                      <li key={i} className="flex gap-3 text-sm text-gray-400">
+                        <span className="text-[#F59E0B]/50 mt-0.5 shrink-0">—</span>
+                        <span>{line}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="border-l-2 border-[#333] pl-6 space-y-8">
+                )}
+
+                {'projects' in entry && entry.projects.length > 0 && (
+                  <div className="space-y-7">
                     {entry.projects.map((project, pi) => (
-                      <SubEntry key={pi} entry={project} />
+                      <ProjectCard key={pi} project={project} />
                     ))}
                   </div>
-                </>
-              ) : (
-                <ul className="list-disc list-inside space-y-1">
-                  {entry.description.map((line, i) => (
-                    <li key={i} className="text-gray-400 text-lg">
-                      {line}
-                    </li>
-                  ))}
-                </ul>
-              )}
+                )}
+              </div>
             </motion.div>
           ))}
         </div>
