@@ -1,11 +1,79 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "San Francisco", sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'San Francisco', sans-serif;
+}
+
+/* ── Design tokens ─────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg: #ffffff;
+  --bg-subtle: #f9f9f9;
+  --surface: #ffffff;
+  /* Borders & dividers */
+  --border: #e5e5e5;
+  --divider: #ebebeb;
+  /* Text */
+  --text: #111111;
+  --text-muted: #6b7280;
+  --text-dim: #9ca3af;
+  /* Accent (amber) */
+  --accent: #f59e0b;
+  --accent-hover: #d97706;
+  --accent-muted: #fef9ee;
+  /* SVG pipeline graphic */
+  --node-fill: #ffffff;
+  --node-stroke: #d4d4d4;
+  --node-label: #b0b0b0;
+  --node-sub: #cccccc;
+  --edge-track: #e8e8e8;
+}
+
+[data-theme='dark'] {
+  --bg: #000000;
+  --bg-subtle: #050505;
+  --surface: #080808;
+  --border: #1e1e1e;
+  --divider: #111111;
+  --text: #f5f5f7;
+  --text-muted: #9ca3af;
+  --text-dim: #6b7280;
+  --accent: #f59e0b;
+  --accent-hover: #d97706;
+  --accent-muted: #1c1500;
+  --node-fill: #0a0a0a;
+  --node-stroke: #2a2a2a;
+  --node-label: #505050;
+  --node-sub: #383838;
+  --edge-track: #1e1e1e;
+}
+
+/* ── Tailwind color token registration ──────────────────────── */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-surface: var(--surface);
+  --color-border-main: var(--border);
+  --color-divider-main: var(--divider);
+  --color-foreground: var(--text);
+  --color-muted: var(--text-muted);
+  --color-dim: var(--text-dim);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-muted: var(--accent-muted);
 }
 
 body {
-  background-color: #000; /* Apple Pro Dark Aesthetic */
-  color: #f5f5f7;
+  background-color: var(--bg);
+  color: var(--text);
   overflow-x: hidden;
+}
+
+@keyframes flow {
+  from {
+    stroke-dashoffset: 36;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
