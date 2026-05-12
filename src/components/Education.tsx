@@ -54,7 +54,7 @@ export function Education({ educationEntries }: EducationProps) {
                   <ul className="mt-3 space-y-1">
                     {entry.description.map((line, i) => (
                       <li key={i} className="flex gap-3 text-sm text-muted">
-                        <span className="text-accent/50 mt-0.5 shrink-0">—</span>
+                        {entry.description!.length > 1 && <span className="text-accent/50 mt-0.5 shrink-0">—</span>}
                         <span>{line}</span>
                       </li>
                     ))}

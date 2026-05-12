@@ -47,7 +47,7 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
         endYear: 2023,
         description: [
           'Migrated on-prem data warehouse to a cloud data lakehouse',
-          'Implemented ETL processes with PySpark',
+          'Implement ETL processes with PySpark',
         ],
       },
     ],
@@ -59,9 +59,7 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
     startYear: 2022,
     endMonth: 'Feb',
     endYear: 2023,
-    description: [
-      'Developed a Training Scheduler API to automate traineeship sessions using GCP and G Suite APIs',
-    ],
+    description: [],
     projects: [
       {
         role: 'Machine Learning Engineer',
@@ -86,9 +84,9 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
     endMonth: 'Feb',
     endYear: 2022,
     description: [
-      'Assisted in data collection and preprocessing for various projects',
-      'Conducted exploratory data analysis and visualizations',
-      'Supported the development of machine learning models',
+      'Scrape data sources using Selenium & Beautiful Soup.',
+      'Ingest data in real time with Pub/Sub.',
+      'Developed APIs as microservices using FastAPI, Docker, and Cloud Run.',
     ],
   },
 ];

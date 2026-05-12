@@ -8,6 +8,9 @@ export const EDUCATION_ENTRIES: EducationEntry[] = [
     startYear: 2023,
     endMonth: 'Aug',
     endYear: 2025,
+    description: [
+      'Thesis: Designing Agentic AI Systems with Model Context Protocol — An Enterprise HR Assistant.'
+    ],
   },
   {
     university: 'International Hellenic University',
@@ -16,7 +19,9 @@ export const EDUCATION_ENTRIES: EducationEntry[] = [
     startYear: 2020,
     endMonth: 'Feb',
     endYear: 2022,
-    description: [],
+    description: [
+      'Thesis: Processing EEG signals using Deep Learning methods for medical diagnosis.'
+    ],
   },
   {
     university: 'Aristotle University of Thessaloniki',
