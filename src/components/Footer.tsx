@@ -18,19 +18,19 @@ function LinkedinIcon({ className }: { className?: string }) {
 
 const links = [
   {
+    Icon: Mail,
+    label: 'Email',
+    href: 'mailto:contact@gkenios.com',
+  },
+  {
     Icon: GithubIcon,
     label: 'GitHub',
     href: 'https://github.com/gkenios',
   },
   {
-    Icon: Mail,
-    label: 'Email',
-    href: 'mailto:', // TODO: add your email address
-  },
-  {
     Icon: LinkedinIcon,
     label: 'LinkedIn',
-    href: 'https://linkedin.com/in/gkenios', // TODO: verify your LinkedIn URL
+    href: 'https://linkedin.com/in/gkenios',
   },
 ] as const;
 
@@ -52,7 +52,7 @@ export function Footer() {
             </a>
           ))}
         </div>
-        <p className="text-[11px] text-dim">© {new Date().getFullYear()} Georgios Gkenios</p>
+        <p className="text-[11px] text-dim">© {new Date().getFullYear()} Georgios Gkenios. All rights reserved.</p>
       </div>
     </footer>
   );

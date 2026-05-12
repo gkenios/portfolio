@@ -24,7 +24,7 @@ function PipelineGraphic() {
     { cx: 220, cy: 150, r: 26, label: 'STG', sub: '01', accent: false },
     { cx: 220, cy: 270, r: 26, label: 'STG', sub: '02', accent: false },
     { cx: 370, cy: 210, r: 32, label: 'DWH', sub: '', accent: true },
-    { cx: 490, cy: 130, r: 24, label: 'RPT', sub: '', accent: false },
+    { cx: 490, cy: 130, r: 24, label: 'BI', sub: '', accent: false },
     { cx: 490, cy: 290, r: 24, label: 'ML', sub: '', accent: false },
   ];
 

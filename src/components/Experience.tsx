@@ -20,21 +20,21 @@ function formatPeriod(
 
 function ProjectCard({ project }: { project: FlatExperienceEntry }) {
   return (
-    <div className="border-l border-accent/20 pl-5 py-0.5">
-      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
+    <div className="border border-border-main rounded-xl p-6">
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-4">
         <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent/60 mb-0.5">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent mb-1">
             {project.company}
           </p>
-          <h4 className="text-base font-semibold">{project.role}</h4>
+          <h4 className="text-2xl font-bold">{project.role}</h4>
         </div>
         <p className="text-xs text-dim whitespace-nowrap">{formatPeriod(project)}</p>
       </div>
       {project.description.length > 0 && (
-        <ul className="space-y-1.5">
+        <ul className="space-y-2">
           {project.description.map((line, i) => (
             <li key={i} className="flex gap-2.5 text-sm text-muted">
-              <span className="text-accent/40 mt-0.5 shrink-0">›</span>
+              <span className="text-accent/50 mt-0.5 shrink-0">—</span>
               <span>{line}</span>
             </li>
           ))}

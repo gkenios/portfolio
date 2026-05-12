@@ -34,13 +34,13 @@ export function Education({ educationEntries }: EducationProps) {
               transition={{ duration: 0.6, delay: index * 0.08 }}
               className="py-10 grid grid-cols-1 md:grid-cols-[176px_1fr] gap-8 md:gap-16"
             >
-              {/* Years */}
+              {/* Period */}
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-dim mb-1">
                   Period
                 </p>
                 <p className="text-sm text-muted">
-                  {entry.startYear} — {entry.endYear}
+                  {entry.startMonth} {entry.startYear} — {entry.endMonth} {entry.endYear}
                 </p>
               </div>
 
