@@ -66,7 +66,13 @@ function PipelineGraphic() {
 
       {/* Static background edges */}
       {edges.map((e, i) => (
-        <path key={`bg-${i}`} d={e.d} stroke="#1e1e1e" strokeWidth="1.5" strokeLinecap="round" />
+        <path
+          key={`bg-${i}`}
+          d={e.d}
+          stroke="var(--edge-track)"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
       ))}
 
       {/* Animated flowing edges */}
@@ -74,7 +80,7 @@ function PipelineGraphic() {
         <path
           key={`flow-${i}`}
           d={e.d}
-          stroke="#F59E0B"
+          stroke="var(--accent)"
           strokeWidth="2"
           strokeLinecap="round"
           strokeDasharray="6 30"
@@ -86,13 +92,15 @@ function PipelineGraphic() {
       {/* Nodes */}
       {nodes.map((n, i) => (
         <g key={i}>
-          {n.accent && <circle cx={n.cx} cy={n.cy} r={n.r + 12} fill="#F59E0B" opacity="0.06" />}
+          {n.accent && (
+            <circle cx={n.cx} cy={n.cy} r={n.r + 12} fill="var(--accent)" opacity="0.06" />
+          )}
           <circle
             cx={n.cx}
             cy={n.cy}
             r={n.r}
-            fill="#0a0a0a"
-            stroke={n.accent ? '#F59E0B' : '#2a2a2a'}
+            fill="var(--node-fill)"
+            stroke={n.accent ? 'var(--accent)' : 'var(--node-stroke)'}
             strokeWidth={n.accent ? 1.5 : 1}
             filter={n.accent ? 'url(#glow-node)' : undefined}
           />
@@ -101,7 +109,7 @@ function PipelineGraphic() {
             y={n.cy - (n.sub ? 5 : 0)}
             textAnchor="middle"
             dominantBaseline="middle"
-            fill={n.accent ? '#F59E0B' : '#505050'}
+            fill={n.accent ? 'var(--accent)' : 'var(--node-label)'}
             fontSize={n.r > 28 ? 11 : 10}
             fontFamily="'Courier New', monospace"
             fontWeight="600"
@@ -115,7 +123,7 @@ function PipelineGraphic() {
               y={n.cy + 9}
               textAnchor="middle"
               dominantBaseline="middle"
-              fill={n.accent ? '#F59E0B' : '#383838'}
+              fill={n.accent ? 'var(--accent)' : 'var(--node-sub)'}
               fontSize="9"
               fontFamily="'Courier New', monospace"
             >
@@ -136,7 +144,7 @@ export function Intro() {
         <motion.div initial="hidden" animate="visible" variants={container}>
           <motion.p
             variants={item}
-            className="text-xs font-bold uppercase tracking-[0.25em] text-[#F59E0B] mb-5"
+            className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-5"
           >
             Data Engineer
           </motion.p>
@@ -150,7 +158,7 @@ export function Intro() {
           </motion.h1>
           <motion.p
             variants={item}
-            className="text-base md:text-lg text-gray-400 leading-relaxed max-w-sm mb-10"
+            className="text-base md:text-lg text-muted leading-relaxed max-w-sm mb-10"
           >
             Architecting the flow of data. Pro-level pipelines, massive scalability, zero
             compromises.
@@ -159,7 +167,7 @@ export function Intro() {
             variants={item}
             href="/cv.pdf"
             download
-            className="inline-flex items-center gap-3 bg-[#F59E0B] text-black font-bold px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-[#D97706] transition-colors duration-200"
+            className="inline-flex items-center gap-3 bg-accent text-black font-bold px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-accent-hover transition-colors duration-200"
           >
             <Download className="w-4 h-4" />
             Download CV
@@ -184,7 +192,7 @@ export function Intro() {
         transition={{ delay: 1.8, duration: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
-        <ChevronDown className="w-5 h-5 text-gray-700 animate-bounce" />
+        <ChevronDown className="w-5 h-5 text-dim animate-bounce" />
       </motion.div>
     </section>
   );

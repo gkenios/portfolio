@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import type { ExperienceEntry, NormalExperienceEntry } from '../types';
+import type { ExperienceEntry, FlatExperienceEntry } from '../types';
 
 type ExperienceProps = {
   experienceEntries: ExperienceEntry[];
 };
 
 function formatPeriod(
-  entry: Pick<NormalExperienceEntry, 'startMonth' | 'startYear' | 'endMonth' | 'endYear'>
+  entry: Pick<FlatExperienceEntry, 'startMonth' | 'startYear' | 'endMonth' | 'endYear'>
 ): string {
   const start = entry.startMonth ? `${entry.startMonth} ${entry.startYear}` : `${entry.startYear}`;
   const end =
@@ -18,23 +18,23 @@ function formatPeriod(
   return `${start} — ${end}`;
 }
 
-function ProjectCard({ project }: { project: NormalExperienceEntry }) {
+function ProjectCard({ project }: { project: FlatExperienceEntry }) {
   return (
-    <div className="border-l border-[#F59E0B]/20 pl-5 py-0.5">
+    <div className="border-l border-accent/20 pl-5 py-0.5">
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
         <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#F59E0B]/60 mb-0.5">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent/60 mb-0.5">
             {project.company}
           </p>
           <h4 className="text-base font-semibold">{project.role}</h4>
         </div>
-        <p className="text-xs text-gray-600 whitespace-nowrap">{formatPeriod(project)}</p>
+        <p className="text-xs text-dim whitespace-nowrap">{formatPeriod(project)}</p>
       </div>
       {project.description.length > 0 && (
         <ul className="space-y-1.5">
           {project.description.map((line, i) => (
-            <li key={i} className="flex gap-2.5 text-sm text-gray-500">
-              <span className="text-[#F59E0B]/40 mt-0.5 shrink-0">›</span>
+            <li key={i} className="flex gap-2.5 text-sm text-muted">
+              <span className="text-accent/40 mt-0.5 shrink-0">›</span>
               <span>{line}</span>
             </li>
           ))}
@@ -55,7 +55,7 @@ export function Experience({ experienceEntries }: ExperienceProps) {
           transition={{ duration: 0.7 }}
           className="mb-16"
         >
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#F59E0B] mb-3">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-3">
             Experience
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
@@ -63,7 +63,7 @@ export function Experience({ experienceEntries }: ExperienceProps) {
           </h2>
         </motion.div>
 
-        <div className="divide-y divide-[#111]">
+        <div className="divide-y divide-divider-main">
           {experienceEntries.map((entry, index) => (
             <motion.div
               key={index}
@@ -75,15 +75,15 @@ export function Experience({ experienceEntries }: ExperienceProps) {
             >
               {/* Metadata */}
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-700 mb-1">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-dim mb-1">
                   Duration
                 </p>
-                <p className="text-sm text-gray-400">{formatPeriod(entry)}</p>
+                <p className="text-sm text-muted">{formatPeriod(entry)}</p>
               </div>
 
               {/* Content */}
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#F59E0B] mb-1">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent mb-1">
                   {entry.company}
                 </p>
                 <h3 className="text-2xl font-bold mb-5">{entry.role}</h3>
@@ -91,8 +91,8 @@ export function Experience({ experienceEntries }: ExperienceProps) {
                 {entry.description.length > 0 && (
                   <ul className="space-y-2 mb-8">
                     {entry.description.map((line, i) => (
-                      <li key={i} className="flex gap-3 text-sm text-gray-400">
-                        <span className="text-[#F59E0B]/50 mt-0.5 shrink-0">—</span>
+                      <li key={i} className="flex gap-3 text-sm text-muted">
+                        <span className="text-accent/50 mt-0.5 shrink-0">—</span>
                         <span>{line}</span>
                       </li>
                     ))}

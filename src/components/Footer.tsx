@@ -36,7 +36,7 @@ const links = [
 
 export function Footer() {
   return (
-    <footer className="py-16 px-6 border-t border-[#111]">
+    <footer className="py-16 px-6 border-t border-border-main">
       <div className="max-w-5xl mx-auto flex flex-col items-center gap-10">
         <div className="flex gap-12">
           {links.map(({ Icon, label, href }) => (
@@ -45,14 +45,14 @@ export function Footer() {
               href={href}
               target={href.startsWith('mailto') ? undefined : '_blank'}
               rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-              className="flex flex-col items-center gap-2 text-gray-600 hover:text-[#F59E0B] transition-colors duration-200"
+              className="flex flex-col items-center gap-2 text-dim hover:text-accent transition-colors duration-200"
             >
               <Icon className="w-5 h-5" />
               <span className="text-[10px] font-bold uppercase tracking-[0.2em]">{label}</span>
             </a>
           ))}
         </div>
-        <p className="text-[11px] text-gray-800">© {new Date().getFullYear()} Georgios Gkenios</p>
+        <p className="text-[11px] text-dim">© {new Date().getFullYear()} Georgios Gkenios</p>
       </div>
     </footer>
   );

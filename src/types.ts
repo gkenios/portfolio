@@ -1,3 +1,32 @@
+// Education
+export type EducationEntry = {
+  university: string;
+  degree: string;
+  startYear: number;
+  startMonth?: MonthNameShort;
+  endMonth?: MonthNameShort;
+  endYear: number | 'Present';
+  description?: string[];
+};
+
+// Experience
+export type FlatExperienceEntry = {
+  role: string;
+  company: string;
+  startMonth?: MonthNameShort;
+  startYear: number;
+  endMonth?: MonthNameShort;
+  endYear: number | 'Present';
+  description: string[];
+};
+
+export type NestedExperienceEntry = FlatExperienceEntry & {
+  projects: FlatExperienceEntry[];
+};
+
+export type ExperienceEntry = FlatExperienceEntry | NestedExperienceEntry;
+
+// Skills
 export type SkillItem = {
   name: string;
   icon?: string;
@@ -8,30 +37,7 @@ export type SkillCategory = {
   items: SkillItem[];
 };
 
-export type NormalExperienceEntry = {
-  role: string;
-  company: string;
-  startMonth?: MonthNameShort;
-  startYear: number;
-  endMonth?: MonthNameShort;
-  endYear: number | 'Present';
-  description: string[];
-};
-
-export type ConsultantExperienceEntry = NormalExperienceEntry & {
-  projects: NormalExperienceEntry[];
-};
-
-export type ExperienceEntry = NormalExperienceEntry | ConsultantExperienceEntry;
-
-export type EducationEntry = {
-  university: string;
-  degree: string;
-  startYear: number;
-  endYear: number | 'Present';
-  description?: string[];
-};
-
+// Shared
 export type MonthNameShort =
   | 'Jan'
   | 'Feb'

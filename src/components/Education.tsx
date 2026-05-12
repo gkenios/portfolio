@@ -7,7 +7,7 @@ type EducationProps = {
 
 export function Education({ educationEntries }: EducationProps) {
   return (
-    <section className="py-28 px-6 md:px-12 lg:px-20 bg-[#050505]">
+    <section className="py-28 px-6 md:px-12 lg:px-20 bg-bg-subtle">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,7 +16,7 @@ export function Education({ educationEntries }: EducationProps) {
           transition={{ duration: 0.7 }}
           className="mb-16"
         >
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#F59E0B] mb-3">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-3">
             Education
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
@@ -24,7 +24,7 @@ export function Education({ educationEntries }: EducationProps) {
           </h2>
         </motion.div>
 
-        <div className="divide-y divide-[#111]">
+        <div className="divide-y divide-divider-main">
           {educationEntries.map((entry, index) => (
             <motion.div
               key={index}
@@ -36,25 +36,25 @@ export function Education({ educationEntries }: EducationProps) {
             >
               {/* Years */}
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-700 mb-1">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-dim mb-1">
                   Period
                 </p>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-muted">
                   {entry.startYear} — {entry.endYear}
                 </p>
               </div>
 
               {/* Degree */}
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#F59E0B] mb-1">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent mb-1">
                   {entry.university}
                 </p>
                 <h3 className="text-xl font-bold">{entry.degree}</h3>
                 {entry.description && entry.description.length > 0 && (
                   <ul className="mt-3 space-y-1">
                     {entry.description.map((line, i) => (
-                      <li key={i} className="flex gap-3 text-sm text-gray-500">
-                        <span className="text-[#F59E0B]/50 mt-0.5 shrink-0">—</span>
+                      <li key={i} className="flex gap-3 text-sm text-muted">
+                        <span className="text-accent/50 mt-0.5 shrink-0">—</span>
                         <span>{line}</span>
                       </li>
                     ))}
