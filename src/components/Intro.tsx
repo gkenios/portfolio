@@ -165,8 +165,9 @@ export function Intro() {
           </motion.p>
           <motion.a
             variants={item}
-            href="/cv.pdf"
-            download
+            href="https://drive.google.com/uc?export=download&id=1_5yllodESx5n5cMuuKNWfFEw-99HRZ3z"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-accent text-black font-bold px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-accent-hover transition-colors duration-200"
           >
             <Download className="w-4 h-4" />
