@@ -1,7 +1,7 @@
 import { type BezierDefinition, motion } from 'framer-motion';
 import { ChevronDown, Download } from 'lucide-react';
 
-const CV_URL = 'https://drive.google.com/uc?export=download&id=1_5yllodESx5n5cMuuKNWfFEw-99HRZ3z';
+import { CV_URL } from '../data';
 
 const ease: BezierDefinition = [0.25, 0.1, 0.25, 1];
 
