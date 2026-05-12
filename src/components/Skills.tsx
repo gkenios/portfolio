@@ -38,7 +38,7 @@ function SkillTile({ name, icon, index }: { name: string; icon?: string; index: 
 export function Skills({ categories }: SkillsProps) {
   return (
     <section className="py-28 px-6 md:px-12 lg:px-20 bg-bg-subtle">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,9 +54,15 @@ export function Skills({ categories }: SkillsProps) {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10">
-          {categories.map((cat) => (
-            <div key={cat.label}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10">
+          {categories.map((cat, index) => (
+            <motion.div
+              key={cat.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, delay: index * 0.05 }}
+            >
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-dim mb-3">
                 {cat.label}
               </p>
@@ -65,7 +71,7 @@ export function Skills({ categories }: SkillsProps) {
                   <SkillTile key={skill.name} name={skill.name} icon={skill.icon} index={i} />
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
