@@ -1,7 +1,8 @@
 import { type BezierDefinition, motion } from 'framer-motion';
-import { ChevronDown, Download } from 'lucide-react';
+import { ChevronDown, Download, Mail } from 'lucide-react';
 
-import { CV_URL } from '../data';
+import { GithubIcon, LinkedinIcon } from './Icons';
+import { CONTACT_DETAILS, CV_URL } from '../data';
 
 const ease: BezierDefinition = [0.25, 0.1, 0.25, 1];
 
@@ -175,6 +176,33 @@ export function Intro() {
             <Download className="w-4 h-4" />
             Download CV
           </motion.a>
+          <motion.div variants={item} className="flex items-center gap-3 mt-6">
+            <a
+              href={`mailto:${CONTACT_DETAILS.email}`}
+              aria-label="Email"
+              className="w-10 h-10 rounded-full border border-border-main/40 bg-bg/20 backdrop-blur-sm flex items-center justify-center text-muted hover:bg-bg/70 hover:backdrop-blur-md hover:border-border-main/60 hover:text-foreground hover:shadow-md transition-all duration-300"
+            >
+              <Mail className="w-4 h-4" />
+            </a>
+            <a
+              href={CONTACT_DETAILS.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="w-10 h-10 rounded-full border border-border-main/40 bg-bg/20 backdrop-blur-sm flex items-center justify-center text-muted hover:bg-bg/70 hover:backdrop-blur-md hover:border-border-main/60 hover:text-foreground hover:shadow-md transition-all duration-300"
+            >
+              <GithubIcon className="w-4 h-4" />
+            </a>
+            <a
+              href={CONTACT_DETAILS.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="w-10 h-10 rounded-full border border-border-main/40 bg-bg/20 backdrop-blur-sm flex items-center justify-center text-muted hover:bg-bg/70 hover:backdrop-blur-md hover:border-border-main/60 hover:text-foreground hover:shadow-md transition-all duration-300"
+            >
+              <LinkedinIcon className="w-4 h-4" />
+            </a>
+          </motion.div>
         </motion.div>
 
         {/* Pipeline graphic */}
