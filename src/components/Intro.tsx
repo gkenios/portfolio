@@ -1,6 +1,8 @@
 import { type BezierDefinition, motion } from 'framer-motion';
 import { ChevronDown, Download } from 'lucide-react';
 
+const CV_URL = 'https://drive.google.com/uc?export=download&id=1_5yllodESx5n5cMuuKNWfFEw-99HRZ3z';
+
 const ease: BezierDefinition = [0.25, 0.1, 0.25, 1];
 
 const container = {
@@ -165,7 +167,7 @@ export function Intro() {
           </motion.p>
           <motion.a
             variants={item}
-            href="https://drive.google.com/uc?export=download&id=1_5yllodESx5n5cMuuKNWfFEw-99HRZ3z"
+            href={CV_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-accent text-black font-bold px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-accent-hover transition-colors duration-200"

@@ -1,5 +1,7 @@
 import { Mail } from 'lucide-react';
 
+import { CONTACT_DETAILS } from '../data';
+
 function GithubIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -20,17 +22,17 @@ const links = [
   {
     Icon: Mail,
     label: 'Email',
-    href: 'mailto:contact@gkenios.com',
+    href: `mailto:${CONTACT_DETAILS.email}`,
   },
   {
     Icon: GithubIcon,
     label: 'GitHub',
-    href: 'https://github.com/gkenios',
+    href: CONTACT_DETAILS.github,
   },
   {
     Icon: LinkedinIcon,
     label: 'LinkedIn',
-    href: 'https://linkedin.com/in/gkenios',
+    href: CONTACT_DETAILS.linkedin,
   },
 ] as const;
 

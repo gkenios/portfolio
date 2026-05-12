@@ -37,6 +37,13 @@ export type SkillCategory = {
   items: SkillItem[];
 };
 
+// Contact
+export type ContactDetails = {
+  email: string;
+  github: string;
+  linkedin: string;
+};
+
 // Shared
 export type MonthNameShort =
   | 'Jan'
