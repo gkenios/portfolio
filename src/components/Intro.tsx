@@ -2,7 +2,7 @@ import { type BezierDefinition, motion } from 'framer-motion';
 import { ChevronDown, Download, Mail } from 'lucide-react';
 
 import { GithubIcon, LinkedinIcon } from './Icons';
-import { CONTACT_DETAILS, CV_URL } from '../data';
+import { ABOUT_ME, CONTACT_DETAILS, CV_URL, FULL_NAME, JOB_TITLE } from '../data';
 
 const ease: BezierDefinition = [0.25, 0.1, 0.25, 1];
 
@@ -152,22 +152,24 @@ export function Intro() {
             variants={item}
             className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-5"
           >
-            Data Engineer
+            {JOB_TITLE}
           </motion.p>
           <motion.h1
             variants={item}
             className="text-6xl md:text-7xl xl:text-8xl font-black tracking-tighter leading-[0.92] mb-8"
           >
-            Georgios
-            <br />
-            Gkenios
+            {FULL_NAME.split(' ').map((name, index) => (
+              <span key={index}>
+                {name}
+                <br />
+              </span>
+            ))}
           </motion.h1>
           <motion.p
             variants={item}
             className="text-base md:text-lg text-muted leading-relaxed max-w-sm mb-10"
           >
-            Architecting the flow of data. Pro-level pipelines, massive scalability, zero
-            compromises.
+            {ABOUT_ME}
           </motion.p>
           <motion.a
             variants={item}
