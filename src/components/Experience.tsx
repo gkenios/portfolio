@@ -1,28 +1,15 @@
-import { type BezierDefinition, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { ExperienceEntry, FlatExperienceEntry } from '../types';
 
-const ease: BezierDefinition = [0.25, 0.1, 0.25, 1];
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } },
-};
+import { fadeUp } from '../lib/animations';
+import { formatPeriod } from '../lib/format';
+
+const TITLE = 'Experience';
+const SUBTITLE = "Where I've worked.";
 
 type ExperienceProps = {
   experienceEntries: ExperienceEntry[];
 };
-
-function formatPeriod(
-  entry: Pick<FlatExperienceEntry, 'startMonth' | 'startYear' | 'endMonth' | 'endYear'>
-): string {
-  const start = entry.startMonth ? `${entry.startMonth} ${entry.startYear}` : `${entry.startYear}`;
-  const end =
-    entry.endYear === 'Present'
-      ? 'Present'
-      : entry.endMonth
-        ? `${entry.endMonth} ${entry.endYear}`
-        : `${entry.endYear}`;
-  return `${start} — ${end}`;
-}
 
 function ProjectCard({ project }: { project: FlatExperienceEntry }) {
   return (
@@ -62,10 +49,10 @@ export function Experience({ experienceEntries }: ExperienceProps) {
           className="mb-16"
         >
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-3">
-            Experience
+            {TITLE}
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
-            Where I've worked.
+            {SUBTITLE}
           </h2>
         </motion.div>
 

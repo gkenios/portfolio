@@ -1,22 +1,21 @@
-// Education
-export type EducationEntry = {
-  university: string;
-  degree: string;
-  startYear: number;
+export type TimePeriod = {
   startMonth?: MonthNameShort;
+  startYear: number;
   endMonth?: MonthNameShort;
   endYear: number | 'Present';
+};
+
+// Education
+export type EducationEntry = TimePeriod & {
+  university: string;
+  degree: string;
   description?: string[];
 };
 
 // Experience
-export type FlatExperienceEntry = {
+export type FlatExperienceEntry = TimePeriod & {
   role: string;
   company: string;
-  startMonth?: MonthNameShort;
-  startYear: number;
-  endMonth?: MonthNameShort;
-  endYear: number | 'Present';
   description: string[];
 };
 

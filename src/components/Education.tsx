@@ -1,11 +1,11 @@
-import { type BezierDefinition, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { EducationEntry } from '../types';
 
-const ease: BezierDefinition = [0.25, 0.1, 0.25, 1];
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } },
-};
+import { fadeUp } from '../lib/animations';
+import { formatPeriod } from '../lib/format';
+
+const TITLE = 'Education';
+const SUBTITLE = 'Academic background.';
 
 type EducationProps = {
   educationEntries: EducationEntry[];
@@ -23,10 +23,10 @@ export function Education({ educationEntries }: EducationProps) {
           className="mb-16"
         >
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-3">
-            Education
+            {TITLE}
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
-            Academic background.
+            {SUBTITLE}
           </h2>
         </motion.div>
 
@@ -45,9 +45,7 @@ export function Education({ educationEntries }: EducationProps) {
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-dim mb-1">
                   Period
                 </p>
-                <p className="text-sm text-muted">
-                  {entry.startMonth} {entry.startYear} — {entry.endMonth} {entry.endYear}
-                </p>
+                <p className="text-sm text-muted">{formatPeriod(entry)}</p>
               </div>
 
               {/* Degree */}

@@ -1,6 +1,6 @@
 import { Mail } from 'lucide-react';
 
-import { CONTACT_DETAILS } from '../data';
+import { CONTACT_DETAILS, FULL_NAME } from '../data';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
 const links = [
@@ -39,7 +39,7 @@ export function Footer() {
             </a>
           ))}
         </div>
-        <p className="text-[11px] text-dim">© {new Date().getFullYear()} Georgios Gkenios. All rights reserved.</p>
+        <p className="text-[11px] text-dim">© {new Date().getFullYear()} {FULL_NAME}. All rights reserved.</p>
       </div>
     </footer>
   );
