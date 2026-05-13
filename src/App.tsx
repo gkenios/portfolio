@@ -1,9 +1,9 @@
 import {
-  About,
   Education,
   Experience,
   Footer,
   Header,
+  Hobbies,
   Intro,
   Section,
   ScrollProgress,
@@ -13,10 +13,10 @@ import { EDUCATION_ENTRIES, EXPERIENCE_ENTRIES, SKILLS_CATEGORIES } from './data
 
 const NAV_ITEMS = {
   intro: 'Intro',
-  skills: 'Technical Skills',
+  skills: 'Skills',
   experience: 'Experience',
   education: 'Education',
-  about: 'About',
+  hobbies: 'Hobbies',
 };
 
 export default function App() {
@@ -25,18 +25,23 @@ export default function App() {
       <ScrollProgress />
       <Header titleMapping={NAV_ITEMS} />
       <Intro />
+
       <Section id="skills" label={NAV_ITEMS.skills} title="What I work with." subtle>
         <Skills categories={SKILLS_CATEGORIES} />
       </Section>
+
       <Section id="experience" label={NAV_ITEMS.experience} title="Where I've worked.">
         <Experience experienceEntries={EXPERIENCE_ENTRIES} />
       </Section>
+
       <Section id="education" label={NAV_ITEMS.education} title="Academic background." subtle>
         <Education educationEntries={EDUCATION_ENTRIES} />
       </Section>
-      <Section id="about" label={NAV_ITEMS.about} title="A bit more personal.">
-        <About />
+
+      <Section id="hobbies" label={NAV_ITEMS.hobbies} title="More about me.">
+        <Hobbies />
       </Section>
+
       <Footer subtle />
     </div>
   );

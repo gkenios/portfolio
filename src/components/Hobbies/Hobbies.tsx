@@ -54,7 +54,7 @@ function getOffset(index: number, active: number): -1 | 0 | 1 | null {
   return null;
 }
 
-export function About() {
+export function Hobbies() {
   // State
   const [active, setActive] = useState(0);
 

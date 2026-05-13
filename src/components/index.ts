@@ -1,8 +1,8 @@
-export { About } from './About';
 export { Education } from './Education';
 export { Experience } from './Experience';
 export { Footer } from './Footer';
 export { Header } from './Header';
+export { Hobbies } from './Hobbies';
 export { Intro } from './Intro';
 export { ScrollProgress } from './ScrollProgress';
 export { Section } from './Section';
