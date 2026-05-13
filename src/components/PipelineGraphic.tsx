@@ -1,13 +1,16 @@
 export function PipelineGraphic() {
+  const dv = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons';
+  const si = 'https://cdn.simpleicons.org';
+
   const nodes = [
-    { cx: 70, cy: 90, r: 26, label: 'SRC', sub: '01', accent: false },
-    { cx: 70, cy: 210, r: 26, label: 'SRC', sub: '02', accent: false },
-    { cx: 70, cy: 330, r: 26, label: 'SRC', sub: '03', accent: false },
-    { cx: 220, cy: 150, r: 26, label: 'STG', sub: '01', accent: false },
-    { cx: 220, cy: 270, r: 26, label: 'STG', sub: '02', accent: false },
-    { cx: 370, cy: 210, r: 32, label: 'DWH', sub: '', accent: true },
-    { cx: 490, cy: 130, r: 24, label: 'BI', sub: '', accent: false },
-    { cx: 490, cy: 290, r: 24, label: 'ML', sub: '', accent: false },
+    { cx: 70,  cy: 90,  r: 26, accent: false, icon: `${dv}/apachekafka/apachekafka-original.svg` },
+    { cx: 70,  cy: 210, r: 26, accent: false, icon: `${si}/googlesheets`},
+    { cx: 70,  cy: 330, r: 26, accent: false, icon: `${dv}/azuresqldatabase/azuresqldatabase-original.svg`},
+    { cx: 220, cy: 150, r: 26, accent: false, icon: `${si}/databricks`},
+    { cx: 220, cy: 270, r: 26, accent: false, icon: `${si}/snowflake`},
+    { cx: 370, cy: 210, r: 32, accent: false, icon: `${si}/apacheparquet` },
+    { cx: 490, cy: 130, r: 24, accent: false, icon: `https://api.iconify.design/logos:microsoft-power-bi.svg` },
+    { cx: 490, cy: 290, r: 24, accent: false, icon: `https://api.iconify.design/logos:tableau-icon.svg` },
   ];
 
   const edges = [
@@ -48,13 +51,7 @@ export function PipelineGraphic() {
 
       {/* Static background edges */}
       {edges.map((e, i) => (
-        <path
-          key={`bg-${i}`}
-          d={e.d}
-          stroke="var(--edge-track)"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
+        <path key={`bg-${i}`} d={e.d} stroke="var(--edge-track)" strokeWidth="1.5" strokeLinecap="round" />
       ))}
 
       {/* Animated flowing edges */}
@@ -72,48 +69,32 @@ export function PipelineGraphic() {
       ))}
 
       {/* Nodes */}
-      {nodes.map((n, i) => (
-        <g key={i}>
-          {n.accent && (
-            <circle cx={n.cx} cy={n.cy} r={n.r + 12} fill="var(--accent)" opacity="0.06" />
-          )}
-          <circle
-            cx={n.cx}
-            cy={n.cy}
-            r={n.r}
-            fill="var(--node-fill)"
-            stroke={n.accent ? 'var(--accent)' : 'var(--node-stroke)'}
-            strokeWidth={n.accent ? 1.5 : 1}
-            filter={n.accent ? 'url(#glow-node)' : undefined}
-          />
-          <text
-            x={n.cx}
-            y={n.cy - (n.sub ? 5 : 0)}
-            textAnchor="middle"
-            dominantBaseline="middle"
-            fill={n.accent ? 'var(--accent)' : 'var(--node-label)'}
-            fontSize={n.r > 28 ? 11 : 10}
-            fontFamily="'Courier New', monospace"
-            fontWeight="600"
-            letterSpacing="1.5"
-          >
-            {n.label}
-          </text>
-          {n.sub && (
-            <text
-              x={n.cx}
-              y={n.cy + 9}
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill={n.accent ? 'var(--accent)' : 'var(--node-sub)'}
-              fontSize="9"
-              fontFamily="'Courier New', monospace"
-            >
-              {n.sub}
-            </text>
-          )}
-        </g>
-      ))}
+      {nodes.map((n, i) => {
+        const iconSize = n.r * 1.2;
+        return (
+          <g key={i}>
+            {n.accent && (
+              <circle cx={n.cx} cy={n.cy} r={n.r + 12} fill="var(--accent)" opacity="0.06" />
+            )}
+            <circle
+              cx={n.cx}
+              cy={n.cy}
+              r={n.r}
+              fill="var(--node-fill)"
+              stroke={n.accent ? 'var(--accent)' : 'var(--node-stroke)'}
+              strokeWidth={n.accent ? 1.5 : 1}
+              filter={n.accent ? 'url(#glow-node)' : undefined}
+            />
+            <image
+              href={n.icon}
+              x={n.cx - iconSize / 2}
+              y={n.cy - iconSize / 2}
+              width={iconSize}
+              height={iconSize}
+            />
+          </g>
+        );
+      })}
     </svg>
   );
 }
