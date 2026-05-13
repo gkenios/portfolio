@@ -21,7 +21,7 @@ export const HOBBIES: Hobby[] = [
   {
     type: 'terminal', // Can be 'image' or 'terminal'
     title: 'Code.',
-    text: 'No sleep if my side project is about to finish? Who needs sleep anyway.',
+    text: 'Side project almost finished? That means no sleep. Who needs sleep anyway?',
     accentColor: '#34d399',
     codeSnippet: `from pyspark.sql import SparkSession
 
