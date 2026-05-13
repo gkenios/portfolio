@@ -1,5 +1,5 @@
 export const FULL_NAME = 'Georgios Gkenios';
-export const JOB_TITLE = 'Data Engineer';
+export const ROLE = 'Data Engineer';
 export const ABOUT_ME = `I live for clean code and thoughtful software
   architecture. I spend my days building data solutions solving real problems and my nights wondering
   how to make them run 3% faster.`;

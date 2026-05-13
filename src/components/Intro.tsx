@@ -3,7 +3,7 @@ import { ChevronDown, Download, Mail } from 'lucide-react';
 
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { PipelineGraphic } from './PipelineGraphic';
-import { ABOUT_ME, CONTACT_DETAILS, CV_URL, FULL_NAME, JOB_TITLE } from '../data';
+import { ABOUT_ME, CONTACT_DETAILS, CV_URL, FULL_NAME, ROLE } from '../data';
 
 const fade = {
   hidden: { opacity: 0, y: 28 },
@@ -37,7 +37,7 @@ export function Intro() {
             variants={fade}
             className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-5"
           >
-            {JOB_TITLE}
+            {ROLE}
           </motion.p>
           <motion.h1
             variants={fade}

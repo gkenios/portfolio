@@ -1,5 +1,5 @@
 export { Education } from './Education';
-export { Experience } from './Experience';
+export { Experience } from './Education/Experience';
 export { Footer } from './Footer';
 export { Header } from './Header';
 export { Intro } from './Intro';

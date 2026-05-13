@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import type { SkillCategory } from '../types';
 
-import { fadeUp } from '../lib/animations';
 import { SkillTile } from './SkillTile';
+import { fadeUp } from '../../lib/animations';
+import type { SkillCategory } from '../../types';
 
 const TITLE = 'Technical Skills';
 const SUBTITLE = 'What I work with.';
