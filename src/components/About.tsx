@@ -36,7 +36,6 @@ const CODE_SNIPPET = `from pyspark.sql import SparkSession
 
 spark = (SparkSession
   .builder
-  .appName("app")
   .getOrCreate())
 
 df = spark.read.csv("data.csv")
@@ -151,7 +150,7 @@ export function About() {
                     />
                   ) : (
                     <div
-                      className="w-full h-full flex items-center justify-center p-4"
+                      className="w-full h-full flex items-center justify-center p-7"
                       style={{
                         filter: offset !== 0 ? 'grayscale(80%) brightness(0.5)' : undefined,
                         transition: 'filter 0.5s ease',
