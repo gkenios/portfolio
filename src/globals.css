@@ -1,9 +1,5 @@
 @import 'tailwindcss';
 
-@theme {
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'San Francisco', sans-serif;
-}
-
 /* ── Design tokens ─────────────────────────────────────────── */
 :root {
   /* Backgrounds */
@@ -30,17 +26,22 @@
 }
 
 [data-theme='dark'] {
+  /* Backgrounds */
   --bg: #000000;
   --bg-subtle: #050505;
   --surface: #080808;
+  /* Borders & dividers */
   --border: #1e1e1e;
   --divider: #111111;
+  /* Text */
   --text: #f5f5f7;
   --text-muted: #9ca3af;
   --text-dim: #6b7280;
+  /* Accent (amber) */
   --accent: #f59e0b;
   --accent-hover: #d97706;
   --accent-muted: #1c1500;
+  /* SVG pipeline graphic */
   --node-fill: #0a0a0a;
   --node-stroke: #2a2a2a;
   --node-label: #505050;
@@ -48,7 +49,10 @@
   --edge-track: #1e1e1e;
 }
 
-/* ── Tailwind color token registration ──────────────────────── */
+/* ── Token registration ─────────────────────────────── */
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'San Francisco', sans-serif;
+}
 @theme inline {
   --color-bg: var(--bg);
   --color-bg-subtle: var(--bg-subtle);
@@ -63,12 +67,7 @@
   --color-accent-muted: var(--accent-muted);
 }
 
-body {
-  background-color: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
-}
-
+/* ── Global styles ─────────────────────────────────────────── */
 @keyframes flow {
   from {
     stroke-dashoffset: 36;

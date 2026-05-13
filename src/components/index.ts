@@ -4,6 +4,6 @@ export { Experience } from './Experience';
 export { Footer } from './Footer';
 export { Header } from './Header';
 export { Intro } from './Intro';
-export { Section } from './Section';
 export { ScrollProgress } from './ScrollProgress';
+export { Section } from './Section';
 export { Skills } from './Skills';

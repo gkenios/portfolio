@@ -1,5 +1,5 @@
-import ShoesImg from '../assets/shoes.png';
 import FilmImg from '../assets/film.png';
+import ShoesImg from '../assets/shoes.png';
 
 import type { Hobby } from '../types';
 
