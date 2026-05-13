@@ -26,11 +26,11 @@ export default function App() {
       <Header titleMapping={NAV_ITEMS} />
       <Intro />
 
-      <Section id="skills" label={NAV_ITEMS.skills} title="What I work with." subtle>
+      <Section id="skills" label={NAV_ITEMS.skills} title="Keywords I know well." subtle>
         <Skills categories={SKILLS_CATEGORIES} />
       </Section>
 
-      <Section id="experience" label={NAV_ITEMS.experience} title="Where I've worked.">
+      <Section id="experience" label={NAV_ITEMS.experience} title="My work life backwards.">
         <Experience experienceEntries={EXPERIENCE_ENTRIES} />
       </Section>
 
