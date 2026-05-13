@@ -4,6 +4,7 @@ export const EDUCATION_ENTRIES: EducationEntry[] = [
   {
     university: 'University of Amsterdam',
     degree: 'MBA in Data, AI & Analytics',
+    location: 'Amsterdam, NL',
     startMonth: 'Sep',
     startYear: 2023,
     endMonth: 'Aug',
@@ -15,6 +16,7 @@ export const EDUCATION_ENTRIES: EducationEntry[] = [
   {
     university: 'International Hellenic University',
     degree: 'MSc in Data Science',
+    location: 'Thessaloniki, GR',
     startMonth: 'Oct',
     startYear: 2020,
     endMonth: 'Feb',
@@ -26,6 +28,7 @@ export const EDUCATION_ENTRIES: EducationEntry[] = [
   {
     university: 'Aristotle University of Thessaloniki',
     degree: 'BSc in Mathematics',
+    location: 'Thessaloniki, GR',
     startMonth: 'Sep',
     startYear: 2016,
     endMonth: 'Sep',

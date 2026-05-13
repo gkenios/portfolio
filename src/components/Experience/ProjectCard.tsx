@@ -15,7 +15,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </p>
           <h4 className="text-2xl font-bold">{project.role}</h4>
         </div>
-        <p className="text-xs text-dim whitespace-nowrap">{formatPeriod(project)}</p>
+        <div className="flex flex-col sm:items-end gap-0.5">
+          <p className="text-xs text-dim whitespace-nowrap">{formatPeriod(project)}</p>
+          {project.location && (
+            <p className="text-xs text-dim/70 whitespace-nowrap">{project.location}</p>
+          )}
+        </div>
       </div>
       {project.description.length > 0 && (
         <ul className="space-y-2">

@@ -50,7 +50,23 @@ export function Experience({ experienceEntries }: ExperienceProps) {
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent mb-1">
                   {entry.company}
                 </p>
-                <h3 className="text-2xl font-bold mb-5">{entry.role}</h3>
+                <h3 className="text-2xl font-bold">{entry.role}</h3>
+                {entry.location && (
+                  <p className="flex items-center gap-1 text-xs text-dim mt-1 mb-5">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="shrink-0 opacity-60"
+                    >
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                    {entry.location}
+                  </p>
+                )}
+                {!entry.location && <div className="mb-5" />}
 
                 {entry.description.length > 0 && (
                   <ul className="space-y-2 mb-8">

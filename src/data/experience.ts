@@ -4,6 +4,7 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
   {
     role: 'Consultant',
     company: 'Devoteam',
+    location: 'Amsterdam, NL',
     startMonth: 'Feb',
     startYear: 2023,
     endYear: 'Present',
@@ -12,6 +13,7 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
       {
         role: 'Senior/Lead Data Engineer',
         company: 'Shell',
+        location: 'The Hague, NL',
         startMonth: 'Sep',
         startYear: 2024,
         endMonth: 'Dec',
@@ -26,6 +28,7 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
       {
         role: 'Senior AI Engineer',
         company: 'Nationale Nederlanden',
+        location: 'Amsterdam, NL',
         startMonth: 'Sep',
         startYear: 2023,
         endMonth: 'Jul',
@@ -39,6 +42,7 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
       {
         role: 'Data Engineer',
         company: 'Budget Thuis',
+        location: 'Amsterdam, NL',
         startMonth: 'May',
         startYear: 2023,
         endMonth: 'Aug',
@@ -52,6 +56,7 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
   {
     role: 'Consultant',
     company: 'Xomnia',
+    location: 'Amsterdam, NL',
     startMonth: 'Mar',
     startYear: 2022,
     endMonth: 'Feb',
@@ -61,6 +66,7 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
       {
         role: 'Machine Learning Engineer',
         company: 'Tata Steel',
+        location: 'IJmuiden, NL',
         startMonth: 'Apr',
         startYear: 2022,
         endMonth: 'Feb',
@@ -74,6 +80,7 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
   {
     role: 'Data Science Intern',
     company: 'Dealroom.co',
+    location: 'Amsterdam, NL',
     startMonth: 'Aug',
     startYear: 2021,
     endMonth: 'Feb',

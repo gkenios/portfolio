@@ -9,6 +9,7 @@ export type TimePeriod = {
 export type EducationEntry = TimePeriod & {
   university: string;
   degree: string;
+  location?: string;
   description?: string[];
 };
 
@@ -16,6 +17,7 @@ export type EducationEntry = TimePeriod & {
 export type FlatExperienceEntry = TimePeriod & {
   role: string;
   company: string;
+  location?: string;
   description: string[];
 };
 
