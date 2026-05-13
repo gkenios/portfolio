@@ -31,7 +31,7 @@ export function TerminalWindow({ codeSnippet, accentColor }: TerminalWindowProps
         <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
       </div>
       <pre
-        className="text-[9px] leading-relaxed font-mono text-left flex-1 whitespace-pre-wrap"
+        className="text-[9px] leading-snug font-mono text-left flex-1 whitespace-pre-wrap"
         style={{ color: accentColor }}
       >{codeSnippet.slice(0, charIndex)}<span
           className="inline-block w-px h-3 align-text-bottom"
