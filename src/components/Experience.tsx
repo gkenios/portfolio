@@ -34,7 +34,9 @@ function ProjectCard({ project }: { project: FlatExperienceEntry }) {
         <ul className="space-y-2">
           {project.description.map((line, i) => (
             <li key={i} className="flex gap-2.5 text-sm text-muted">
-              {project.description.length > 1 && <span className="text-accent/50 mt-0.5 shrink-0">—</span>}
+              {project.description.length > 1 && (
+                <span className="text-accent/50 mt-0.5 shrink-0">—</span>
+              )}
               <span>{line}</span>
             </li>
           ))}
@@ -46,7 +48,7 @@ function ProjectCard({ project }: { project: FlatExperienceEntry }) {
 
 export function Experience({ experienceEntries }: ExperienceProps) {
   return (
-    <section className="py-28 px-6 md:px-12 lg:px-20">
+    <section id="experience" className="scroll-mt-20 py-28 px-6 md:px-12 lg:px-20">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -92,7 +94,9 @@ export function Experience({ experienceEntries }: ExperienceProps) {
                   <ul className="space-y-2 mb-8">
                     {entry.description.map((line, i) => (
                       <li key={i} className="flex gap-3 text-sm text-muted">
-                        {entry.description.length > 1 && <span className="text-accent/50 mt-0.5 shrink-0">—</span>}
+                        {entry.description.length > 1 && (
+                          <span className="text-accent/50 mt-0.5 shrink-0">—</span>
+                        )}
                         <span>{line}</span>
                       </li>
                     ))}

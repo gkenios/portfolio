@@ -7,7 +7,7 @@ type EducationProps = {
 
 export function Education({ educationEntries }: EducationProps) {
   return (
-    <section className="py-28 px-6 md:px-12 lg:px-20 bg-bg-subtle">
+    <section id="education" className="scroll-mt-20 py-28 px-6 md:px-12 lg:px-20 bg-bg-subtle">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,7 +54,9 @@ export function Education({ educationEntries }: EducationProps) {
                   <ul className="mt-3 space-y-1">
                     {entry.description.map((line, i) => (
                       <li key={i} className="flex gap-3 text-sm text-muted">
-                        {entry.description!.length > 1 && <span className="text-accent/50 mt-0.5 shrink-0">—</span>}
+                        {entry.description!.length > 1 && (
+                          <span className="text-accent/50 mt-0.5 shrink-0">—</span>
+                        )}
                         <span>{line}</span>
                       </li>
                     ))}

@@ -141,7 +141,10 @@ function PipelineGraphic() {
 
 export function Intro() {
   return (
-    <section className="min-h-screen flex items-center px-6 md:px-12 lg:px-20 relative overflow-hidden">
+    <section
+      id="intro"
+      className="scroll-mt-20 min-h-screen flex items-center px-6 md:px-12 lg:px-20 relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center py-24">
         {/* Text */}
         <motion.div initial="hidden" animate="visible" variants={container}>

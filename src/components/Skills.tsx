@@ -37,7 +37,7 @@ function SkillTile({ name, icon, index }: { name: string; icon?: string; index: 
 
 export function Skills({ categories }: SkillsProps) {
   return (
-    <section className="py-28 px-6 md:px-12 lg:px-20 bg-bg-subtle">
+    <section id="skills" className="scroll-mt-20 py-28 px-6 md:px-12 lg:px-20 bg-bg-subtle">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
