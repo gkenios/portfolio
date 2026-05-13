@@ -34,11 +34,11 @@ export default function App() {
         <Experience experienceEntries={EXPERIENCE_ENTRIES} />
       </Section>
 
-      <Section id="education" label={NAV_ITEMS.education} title="Academic background." subtle>
+      <Section id="education" label={NAV_ITEMS.education} title="My studies." subtle>
         <Education educationEntries={EDUCATION_ENTRIES} />
       </Section>
 
-      <Section id="hobbies" label={NAV_ITEMS.hobbies} title="More about me.">
+      <Section id="hobbies" label={NAV_ITEMS.hobbies} title="In my free time.">
         <Hobbies />
       </Section>
 
