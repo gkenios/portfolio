@@ -4,14 +4,23 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{FULL_NAME}} | {{ROLE}}" />
+    <title>{{FULL_NAME}} | {{ROLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}" />
+    <link rel="canonical" href="https://gkenios.com/" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gkenios.com/" />
+    <meta property="og:title" content="{{FULL_NAME}} | {{ROLE}}" />
+    <meta property="og:description" content="{{DESCRIPTION}}" />
+    <!-- JSON-LD -->
+    <script type="application/ld+json">{{JSON_LD}}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
-  <title>{{FULL_NAME}} | {{ROLE}}</title>  </head>
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
