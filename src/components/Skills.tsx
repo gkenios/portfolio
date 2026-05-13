@@ -4,7 +4,7 @@ import type { SkillCategory } from '../types';
 const ease: BezierDefinition = [0.25, 0.1, 0.25, 1];
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } },
 };
 
 type SkillsProps = {
@@ -20,9 +20,7 @@ function SkillTile({ name, icon }: { name: string; icon?: string }) {
     .toUpperCase();
 
   return (
-    <div
-      className="group flex items-center gap-4 px-5 py-3 border border-border-main bg-surface hover:border-accent hover:bg-accent-muted transition-all duration-300 cursor-default"
-    >
+    <div className="group flex items-center gap-4 px-5 py-3 border border-border-main bg-surface hover:border-accent hover:bg-accent-muted transition-all duration-300 cursor-default">
       {icon ? (
         <img src={icon} alt="" className="w-6 h-6 object-contain shrink-0" loading="lazy" />
       ) : (
