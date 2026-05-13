@@ -1,5 +1,11 @@
-import { motion } from 'framer-motion';
+import { type BezierDefinition, motion } from 'framer-motion';
 import type { EducationEntry } from '../types';
+
+const ease: BezierDefinition = [0.25, 0.1, 0.25, 1];
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } }
+};
 
 type EducationProps = {
   educationEntries: EducationEntry[];
@@ -10,10 +16,10 @@ export function Education({ educationEntries }: EducationProps) {
     <section id="education" className="scroll-mt-20 py-28 px-6 md:px-12 lg:px-20 bg-bg-subtle">
       <div className="max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
           className="mb-16"
         >
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-3">
