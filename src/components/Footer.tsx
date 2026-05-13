@@ -23,25 +23,25 @@ const links = [
 
 export function Footer() {
   return (
-    <footer className="py-16 px-6 border-t border-border-main bg-bg-subtle">
-      <div className="max-w-5xl mx-auto flex flex-col items-center gap-10">
-        <div className="flex gap-12">
+    <footer className="py-6 px-6 border-t border-border-main bg-bg-subtle">
+      <div className="max-w-5xl mx-auto flex items-center justify-between">
+        <p className="text-[11px] text-dim">
+          © {new Date().getFullYear()} {FULL_NAME}. All rights reserved.
+        </p>
+        <div className="flex gap-6">
           {links.map(({ Icon, label, href }) => (
             <a
               key={label}
               href={href}
               target={href.startsWith('mailto') ? undefined : '_blank'}
               rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-              className="flex flex-col items-center gap-2 text-dim hover:text-accent transition-colors duration-200"
+              className="flex items-center gap-2 text-dim hover:text-accent transition-colors duration-200"
             >
-              <Icon className="w-5 h-5" />
+              <Icon className="w-4 h-4" />
               <span className="text-[10px] font-bold uppercase tracking-[0.2em]">{label}</span>
             </a>
           ))}
         </div>
-        <p className="text-[11px] text-dim">
-          © {new Date().getFullYear()} {FULL_NAME}. All rights reserved.
-        </p>
       </div>
     </footer>
   );
