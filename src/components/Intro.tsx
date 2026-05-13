@@ -1,18 +1,10 @@
-import { type BezierDefinition, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ChevronDown, Download, Mail } from 'lucide-react';
 
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { PipelineGraphic } from './PipelineGraphic';
 import { ABOUT_ME, CONTACT_DETAILS, CV_URL, FULL_NAME, ROLE } from '../data';
-
-const fade = {
-  hidden: { opacity: 0, y: 28 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as BezierDefinition },
-  },
-};
+import { fadeChild } from '../lib/animations';
 
 export function Intro() {
   return (
@@ -34,13 +26,13 @@ export function Intro() {
           }}
         >
           <motion.p
-            variants={fade}
+            variants={fadeChild}
             className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-5"
           >
             {ROLE}
           </motion.p>
           <motion.h1
-            variants={fade}
+            variants={fadeChild}
             className="text-6xl md:text-7xl xl:text-8xl font-black tracking-tighter leading-[0.92] mb-8"
           >
             {FULL_NAME.split(' ').map((name, index) => (
@@ -51,13 +43,13 @@ export function Intro() {
             ))}
           </motion.h1>
           <motion.p
-            variants={fade}
+            variants={fadeChild}
             className="text-base md:text-lg text-muted leading-relaxed max-w-sm mb-10"
           >
             {ABOUT_ME}
           </motion.p>
           <motion.a
-            variants={fade}
+            variants={fadeChild}
             href={CV_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -66,7 +58,7 @@ export function Intro() {
             <Download className="w-4 h-4" />
             Download CV
           </motion.a>
-          <motion.div variants={fade} className="flex items-center gap-3 mt-6">
+          <motion.div variants={fadeChild} className="flex items-center gap-3 mt-6">
             <a
               href={`mailto:${CONTACT_DETAILS.email}`}
               aria-label="Email"

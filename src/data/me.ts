@@ -1,6 +1,6 @@
 export const FULL_NAME = 'Georgios Gkenios';
 export const ROLE = 'Data Engineer';
-export const ABOUT_ME = `I live for clean code and thoughtful software architecture. I spend my days building data solutions solving real problems and my nights wondering how to make them run 3% faster.`;
+export const ABOUT_ME = `I live for clean code and thoughtful software architecture. I spend my days building data solutions and my nights wondering how to make them run 3% faster.`;
 
 export const CV_URL = 'https://.google.com/uc?export=download&id=1_5yllodESx5n5cMuuKNWfFEw-99HRZ3z';
 

@@ -22,12 +22,8 @@ export function Education({ educationEntries }: EducationProps) {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-3">
-            {TITLE}
-          </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
-            {SUBTITLE}
-          </h2>
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-3">{TITLE}</p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">{SUBTITLE}</h2>
         </motion.div>
 
         <div className="divide-y divide-divider-main">
