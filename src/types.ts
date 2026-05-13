@@ -1,3 +1,18 @@
+// Shared
+export type MonthNameShort =
+  | 'Jan'
+  | 'Feb'
+  | 'Mar'
+  | 'Apr'
+  | 'May'
+  | 'Jun'
+  | 'Jul'
+  | 'Aug'
+  | 'Sep'
+  | 'Oct'
+  | 'Nov'
+  | 'Dec';
+
 export type TimePeriod = {
   startMonth?: MonthNameShort;
   startYear: number;
@@ -38,6 +53,27 @@ export type SkillCategory = {
   items: SkillItem[];
 };
 
+// About
+export type ImageHobby = {
+  id: string;
+  title: string;
+  quote: string;
+  accentColor: string;
+  type: 'image';
+  image: string;
+};
+
+export type TerminalHobby = {
+  id: string;
+  title: string;
+  quote: string;
+  accentColor: string;
+  type: 'terminal';
+  codeSnippet: string;
+};
+
+export type Hobby = ImageHobby | TerminalHobby;
+
 // Contact
 export type ContactDetails = {
   email: string;
@@ -45,17 +81,3 @@ export type ContactDetails = {
   linkedin: string;
 };
 
-// Shared
-export type MonthNameShort =
-  | 'Jan'
-  | 'Feb'
-  | 'Mar'
-  | 'Apr'
-  | 'May'
-  | 'Jun'
-  | 'Jul'
-  | 'Aug'
-  | 'Sep'
-  | 'Oct'
-  | 'Nov'
-  | 'Dec';
