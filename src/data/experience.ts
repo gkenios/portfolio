@@ -20,6 +20,7 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
           'Developed a PySpark framework, handling over 300 sources, 1000 tables (~3TB), and 200 streaming jobs, reducing development of new pipelines significantly.',
           'Optimized Spark transformations, reducing fact-table pipeline runtimes by ~90% on backfills, by altering the data model and reducing shuffling.',
           'Designed and implemented CI/CD pipelines, automating schema evolution and CRUD operations for jobs/tables, with GitHub Actions.',
+          'Led the project from a technical perspective, mentoring a team of 10 engineers and collaborating with stakeholders to align on requirements and deliverables.',
         ],
       },
       {
@@ -30,12 +31,9 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
         endMonth: 'Jul',
         endYear: 2024,
         description: [
-          'Designed and implemented an end-to-end RAG chatbot solution (Infra, databases, API)',
-          'Built scalable data pipelines infrastructure',
-          'Developed unit, integration, and quality tests',
-          'Set up CI/CD pipelines for all applications',
-          'Infra as Code with Terraform',
-          'Data visualization with Streamlit',
+          'Spearheaded the first NN GenAI project in production, resulting in the first SLA between NN and one of its ventures, by leading the design and development of the infrastructure, the databases, and the APIs, in a team of 4 engineers.',
+          'Optimized the sofware delivery lifecycle, reducing manual developer hours by ~4 hours/week, by setting up self-hosted runners within the network, uptime monitoring & alerting, and rigorous framework of unit, integration and quality tests.',
+          'Created actionable insights for the business and our clients, by developing a website of embedded PowerBI dashboards to share key metrics internally or externally, with a custom OAuth solution.',
         ],
       },
       {
@@ -46,8 +44,7 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
         endMonth: 'Aug',
         endYear: 2023,
         description: [
-          'Migrated on-prem data warehouse to a cloud data lakehouse',
-          'Implement ETL processes with PySpark',
+          'Boosted query performance by 12x for large-scale aggregations by migrating an on-premises data warehouse to a scalable data lake and optimizing the underlying data model.',
         ],
       },
     ],
@@ -69,9 +66,7 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
         endMonth: 'Feb',
         endYear: 2023,
         description: [
-          'Data prep & feature engineering with PySpark',
-          'Model training & inference using MLFlow',
-          'Data visualization with PowerBI',
+          'Predicted early signs of defects in the steel production process, saving €0.1M the first month, by building anomaly detection and expert models using PySpark and MLFlow.',
         ],
       },
     ],
@@ -84,9 +79,8 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
     endMonth: 'Feb',
     endYear: 2022,
     description: [
-      'Scrape data sources using Selenium & Beautiful Soup.',
-      'Ingest data in real time with Pub/Sub.',
-      'Developed APIs as microservices using FastAPI, Docker, and Cloud Run.',
+      'Scraped data sources, enriching the dataset of private companies by ~20%, using Selenium & Beautiful Soup.',
+      'Developed APIs in a microservices architecture using FastAPI, Docker, Pub/Sub, and Cloud Run.',
     ],
   },
 ];
