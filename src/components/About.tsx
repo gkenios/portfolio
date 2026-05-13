@@ -28,7 +28,7 @@ const HOBBIES = [
     id: 'coding',
     title: 'Code.',
     quote: 'No sleep if my side project is about to finish? Who needs sleep anyway.',
-    accentColor: '#38bdf8',
+    accentColor: '#34d399',
   },
 ];
 
