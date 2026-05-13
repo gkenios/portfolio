@@ -13,7 +13,7 @@ const HOBBIES = [
   {
     id: 'running',
     title: 'Run.',
-    quote: 'Running is my reset button. My left knee is "broken", but my spirit is not.',
+    quote: 'Running is my way to distress. My left knee is "broken", but my spirit is not.',
     image: ShoesImg,
     accentColor: '#f59e0b',
   },
@@ -168,7 +168,7 @@ export function About() {
 
           {/* Text — centered under the front card */}
           <div className="mt-14 flex justify-center">
-            <div className="w-48 md:w-60">
+            <div className="w-48 md:w-60 min-h-50 md:min-h-40">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active}
