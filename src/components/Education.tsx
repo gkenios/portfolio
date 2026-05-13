@@ -21,9 +21,7 @@ export function Education({ educationEntries }: EducationProps) {
         >
           {/* Period */}
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-dim mb-1">
-              Period
-            </p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-dim mb-1">Period</p>
             <p className="text-sm text-muted">{formatPeriod(entry)}</p>
           </div>
 

@@ -68,13 +68,8 @@ export function About() {
   const hobby = HOBBIES[active];
 
   return (
-    <motion.div
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-    >
-    {/* 3D Carousel */}
+    <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+      {/* 3D Carousel */}
       <div
         className="relative flex items-center justify-center h-64 md:h-80"
         style={{ perspective: '1000px' }}
@@ -86,7 +81,7 @@ export function About() {
           const isCenter = offset === 0;
           return (
             <motion.div
-              key={h.id}
+              key={i}
               variants={cardVariants}
               animate={variant}
               onClick={() => !isCenter && setActive(i)}
@@ -122,7 +117,7 @@ export function About() {
               >
                 {hobby.title}
               </h3>
-              <p className="text-base text-muted italic leading-relaxed">{hobby.quote}</p>
+              <p className="text-base text-muted italic leading-relaxed">{hobby.text}</p>
             </motion.div>
           </AnimatePresence>
         </div>

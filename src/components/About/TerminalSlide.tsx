@@ -1,4 +1,3 @@
-
 import { TerminalWindow } from './TerminalWindow';
 import type { TerminalHobby } from '../../types';
 

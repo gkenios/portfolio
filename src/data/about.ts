@@ -5,26 +5,23 @@ import type { Hobby } from '../types';
 
 export const HOBBIES: Hobby[] = [
   {
-    type: 'image',
-    id: 'running',
+    type: 'image', // Can be 'image' or 'terminal'
     title: 'Run.',
-    quote: 'Running is my way to distress. My left knee is "broken", but my spirit is not.',
-    image: ShoesImg,
+    text: 'Running is my way to distress. My left knee is "broken", but my spirit is not.',
     accentColor: '#f59e0b',
+    image: ShoesImg,
   },
   {
-    type: 'image',
-    id: 'movies',
+    type: 'image', // Can be 'image' or 'terminal'
     title: 'Watch.',
-    quote: 'No-netflix, go-to-cinema type of guy. One of my favourite movies is Inception.',
-    image: FilmImg,
+    text: 'No-netflix, go-to-cinema type of guy. One of my favourite movies is Inception.',
     accentColor: '#c084fc',
+    image: FilmImg,
   },
   {
-    type: 'terminal',
-    id: 'coding',
+    type: 'terminal', // Can be 'image' or 'terminal'
     title: 'Code.',
-    quote: 'No sleep if my side project is about to finish? Who needs sleep anyway.',
+    text: 'No sleep if my side project is about to finish? Who needs sleep anyway.',
     accentColor: '#34d399',
     codeSnippet: `from pyspark.sql import SparkSession
 

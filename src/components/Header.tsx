@@ -1,15 +1,11 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const NAV_ITEMS = [
-  { label: 'Intro', href: '#intro' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Education', href: '#education' },
-  { label: 'About', href: '#about' },
-];
+type HeaderProps = {
+  titleMapping: Record<string, string>;
+};
 
-export function Header() {
+export function Header({ titleMapping }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(
     () => typeof window !== 'undefined' && window.scrollY > 20
   );
@@ -52,13 +48,13 @@ export function Header() {
           }`}
         >
           <nav className="flex items-center gap-0.5">
-            {NAV_ITEMS.map((item) => (
+            {Object.entries(titleMapping).map(([key, label]) => (
               <a
-                key={item.href}
-                href={item.href}
+                key={key}
+                href={`#${key}`}
                 className="px-4 py-1.5 text-sm font-medium text-muted rounded-lg hover:bg-bg-subtle hover:text-foreground transition-colors duration-200"
               >
-                {item.label}
+                {label}
               </a>
             ))}
           </nav>

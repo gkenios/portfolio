@@ -55,20 +55,18 @@ export type SkillCategory = {
 
 // About
 export type ImageHobby = {
-  id: string;
-  title: string;
-  quote: string;
-  accentColor: string;
   type: 'image';
+  title: string;
+  text: string;
+  accentColor: string;
   image: string;
 };
 
 export type TerminalHobby = {
-  id: string;
-  title: string;
-  quote: string;
-  accentColor: string;
   type: 'terminal';
+  title: string;
+  text: string;
+  accentColor: string;
   codeSnippet: string;
 };
 

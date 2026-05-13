@@ -4,8 +4,6 @@ import { SkillTile } from './SkillTile';
 import { fadeUp } from '../../lib/animations';
 import type { SkillCategory } from '../../types';
 
-
-
 type SkillsProps = {
   categories: SkillCategory[];
 };

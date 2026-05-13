@@ -10,7 +10,7 @@ export const EDUCATION_ENTRIES: EducationEntry[] = [
     endMonth: 'Aug',
     endYear: 2025,
     description: [
-      'Thesis: Designing Agentic AI Systems with Model Context Protocol — An Enterprise HR Assistant.'
+      'Thesis: Designing Agentic AI Systems with Model Context Protocol — An Enterprise HR Assistant.',
     ],
   },
   {
@@ -22,7 +22,7 @@ export const EDUCATION_ENTRIES: EducationEntry[] = [
     endMonth: 'Feb',
     endYear: 2022,
     description: [
-      'Thesis: Processing EEG signals using Deep Learning methods for medical diagnosis.'
+      'Thesis: Processing EEG signals using Deep Learning methods for medical diagnosis.',
     ],
   },
   {
