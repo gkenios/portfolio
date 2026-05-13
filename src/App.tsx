@@ -5,6 +5,7 @@ import {
   Footer,
   Header,
   Intro,
+  Section,
   ScrollProgress,
   Skills,
 } from './components';
@@ -16,11 +17,19 @@ export default function App() {
       <ScrollProgress />
       <Header />
       <Intro />
-      <Skills categories={SKILLS_CATEGORIES} />
-      <Experience experienceEntries={EXPERIENCE_ENTRIES} />
-      <Education educationEntries={EDUCATION_ENTRIES} />
-      <About />
-      <Footer />
+      <Section id="skills" label='Technical Skills' title='What I work with.' subtle>
+        <Skills categories={SKILLS_CATEGORIES} />
+      </Section>
+      <Section id="experience" label='Experience' title="Where I've worked.">
+        <Experience experienceEntries={EXPERIENCE_ENTRIES} />
+      </Section>
+      <Section id="education" label='Education' title='Academic background.' subtle>
+        <Education educationEntries={EDUCATION_ENTRIES} />
+      </Section>
+      <Section id="about" label='About' title='A bit more personal.'>
+        <About />
+      </Section>
+      <Footer subtle />
     </div>
   );
 }

@@ -21,9 +21,13 @@ const links = [
   },
 ] as const;
 
-export function Footer() {
+type FooterProps = {
+  subtle?: boolean;
+};
+
+export function Footer({ subtle = false }: FooterProps) {
   return (
-    <footer className="py-6 px-6 border-t border-border-main bg-bg-subtle">
+    <footer className={`py-6 px-6 border-t border-border-main${subtle ? ' bg-bg-subtle' : ''}`}>
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center gap-4 sm:gap-0 sm:justify-between">
         <p className="text-[11px] text-dim">
           © {new Date().getFullYear()} {FULL_NAME}. All rights reserved.

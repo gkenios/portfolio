@@ -80,4 +80,3 @@ export type ContactDetails = {
   github: string;
   linkedin: string;
 };
-
