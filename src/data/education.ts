@@ -3,7 +3,7 @@ import { type EducationEntry } from '../types';
 export const EDUCATION_ENTRIES: EducationEntry[] = [
   {
     university: 'University of Amsterdam',
-    degree: 'EMBA in Data, AI & Analytics',
+    degree: 'MBA in Data, AI & Analytics',
     startMonth: 'Sep',
     startYear: 2023,
     endMonth: 'Aug',
