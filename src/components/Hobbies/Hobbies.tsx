@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, type BezierDefinition } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { ImageSlide } from './ImageSlide';
 import { TerminalSlide } from './TerminalSlide';
@@ -57,12 +57,26 @@ function getOffset(index: number, active: number): -1 | 0 | 1 | null {
 export function Hobbies() {
   // State
   const [active, setActive] = useState(0);
+  const touchStartX = useRef<number | null>(null);
 
   // Effects
   useEffect(() => {
     const timer = setTimeout(() => setActive((a) => (a + 1) % TOTAL), INTERVAL);
     return () => clearTimeout(timer);
   }, [active]);
+
+  // Handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const delta = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(delta) > 40) {
+      setActive((a) => (delta < 0 ? (a + 1) % TOTAL : (a - 1 + TOTAL) % TOTAL));
+    }
+    touchStartX.current = null;
+  };
 
   // Derived
   const hobby = HOBBIES[active];
@@ -73,6 +87,8 @@ export function Hobbies() {
       <div
         className="relative flex items-center justify-center h-64 md:h-80"
         style={{ perspective: '1000px' }}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
       >
         {HOBBIES.map((h, i) => {
           const offset = getOffset(i, active);
