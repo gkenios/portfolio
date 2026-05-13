@@ -33,7 +33,7 @@ export function Intro() {
           </motion.p>
           <motion.h1
             variants={fadeChild}
-            className="text-6xl md:text-7xl xl:text-8xl font-black tracking-tighter leading-[0.92] mb-8"
+            className="text-6xl md:text-7xl xl:text-8xl font-black tracking-tighter leading-[0.97] mb-8"
           >
             {FULL_NAME.split(' ').map((name, index) => (
               <span key={index}>
