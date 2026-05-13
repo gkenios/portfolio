@@ -169,27 +169,25 @@ export function About() {
 
           {/* Text — centered under the front card */}
           <div className="mt-14 flex justify-center">
-          <div className="w-48 md:w-60">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-              >
-                <h3
-                  className="text-4xl md:text-5xl font-black tracking-tight mb-4 text-center"
-                  style={{ color: hobby.accentColor }}
+            <div className="w-48 md:w-60">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={active}
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
                 >
-                  {hobby.title}
-                </h3>
-                <p className="text-base text-muted italic leading-relaxed">
-                  {hobby.quote}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+                  <h3
+                    className="text-4xl md:text-5xl font-black tracking-tight mb-4 text-center"
+                    style={{ color: hobby.accentColor }}
+                  >
+                    {hobby.title}
+                  </h3>
+                  <p className="text-base text-muted italic leading-relaxed">{hobby.quote}</p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </div>
         </motion.div>
       </div>
