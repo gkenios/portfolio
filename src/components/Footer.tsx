@@ -23,7 +23,7 @@ const links = [
 
 export function Footer() {
   return (
-    <footer className="py-16 px-6 border-t border-border-main">
+    <footer className="py-16 px-6 border-t border-border-main bg-bg-subtle">
       <div className="max-w-5xl mx-auto flex flex-col items-center gap-10">
         <div className="flex gap-12">
           {links.map(({ Icon, label, href }) => (
@@ -39,7 +39,9 @@ export function Footer() {
             </a>
           ))}
         </div>
-        <p className="text-[11px] text-dim">© {new Date().getFullYear()} {FULL_NAME}. All rights reserved.</p>
+        <p className="text-[11px] text-dim">
+          © {new Date().getFullYear()} {FULL_NAME}. All rights reserved.
+        </p>
       </div>
     </footer>
   );

@@ -1,4 +1,13 @@
-import { Education, Experience, Footer, Header, Intro, ScrollProgress, Skills } from './components';
+import {
+  About,
+  Education,
+  Experience,
+  Footer,
+  Header,
+  Intro,
+  ScrollProgress,
+  Skills,
+} from './components';
 import { EDUCATION_ENTRIES, EXPERIENCE_ENTRIES, SKILLS_CATEGORIES } from './data';
 
 export default function App() {
@@ -10,6 +19,7 @@ export default function App() {
       <Skills categories={SKILLS_CATEGORIES} />
       <Experience experienceEntries={EXPERIENCE_ENTRIES} />
       <Education educationEntries={EDUCATION_ENTRIES} />
+      <About />
       <Footer />
     </div>
   );
