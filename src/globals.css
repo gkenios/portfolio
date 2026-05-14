@@ -18,7 +18,7 @@
   --accent-hover: #d97706;
   --accent-muted: #fef9ee;
   /* SVG pipeline graphic */
-  --node-fill: #ffffff;
+  --node-fill: #f9f9f9;
   --node-stroke: #d4d4d4;
   --node-label: #b0b0b0;
   --node-sub: #cccccc;
@@ -27,12 +27,12 @@
 
 [data-theme='dark'] {
   /* Backgrounds */
-  --bg: #000000;
-  --bg-subtle: #050505;
-  --surface: #080808;
+  --bg: #212121;
+  --bg-subtle: #262626;
+  --surface: #2a2a2a;
   /* Borders & dividers */
-  --border: #1e1e1e;
-  --divider: #111111;
+  --border: #3a3a3a;
+  --divider: #313131;
   /* Text */
   --text: #f5f5f7;
   --text-muted: #9ca3af;
@@ -42,11 +42,11 @@
   --accent-hover: #d97706;
   --accent-muted: #1c1500;
   /* SVG pipeline graphic */
-  --node-fill: #0a0a0a;
-  --node-stroke: #2a2a2a;
-  --node-label: #505050;
-  --node-sub: #383838;
-  --edge-track: #1e1e1e;
+  --node-fill: #454444;
+  --node-stroke: #424242;
+  --node-label: #707070;
+  --node-sub: #545454;
+  --edge-track: #3a3a3a;
 }
 
 /* ── Token registration ─────────────────────────────── */
