@@ -20,8 +20,8 @@ export function Experience({ experienceEntries }: ExperienceProps) {
           transition={{ duration: 0.6 }}
           className="py-12 grid grid-cols-1 md:grid-cols-[176px_1fr] gap-8 md:gap-16"
         >
-          {/* Metadata */}
-          <div>
+          {/* Metadata – desktop only */}
+          <div className="hidden md:block">
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-dim mb-1">Period</p>
             <p className="text-sm text-muted">{formatPeriod(entry)}</p>
           </div>
@@ -32,6 +32,7 @@ export function Experience({ experienceEntries }: ExperienceProps) {
               {entry.company}
             </p>
             <h3 className="text-2xl font-bold">{entry.role}</h3>
+            <p className="block md:hidden text-sm text-muted mt-1">{formatPeriod(entry)}</p>
             {entry.location && (
               <p className="flex items-center gap-1 text-xs text-dim mt-1 mb-5">
                 <svg

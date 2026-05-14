@@ -19,8 +19,8 @@ export function Education({ educationEntries }: EducationProps) {
           transition={{ duration: 0.6, delay: index * 0.08 }}
           className="py-10 grid grid-cols-1 md:grid-cols-[176px_1fr] gap-8 md:gap-16"
         >
-          {/* Period */}
-          <div>
+          {/* Period – desktop only */}
+          <div className="hidden md:block">
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-dim mb-1">Period</p>
             <p className="text-sm text-muted">{formatPeriod(entry)}</p>
           </div>
@@ -31,6 +31,7 @@ export function Education({ educationEntries }: EducationProps) {
               {entry.university}
             </p>
             <h3 className="text-xl font-bold">{entry.degree}</h3>
+            <p className="block md:hidden text-sm text-muted mt-1">{formatPeriod(entry)}</p>
             {entry.location && (
               <p className="flex items-center gap-1 text-xs text-dim mt-1">
                 <svg
