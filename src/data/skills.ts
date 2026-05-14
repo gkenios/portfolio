@@ -27,7 +27,7 @@ export const SKILLS_CATEGORIES: SkillCategory[] = [
     items: [
       { name: 'PySpark', icon: `${i}/apachespark.svg` },
       { name: 'Airflow', icon: `${i}/apacheairflow.svg` },
-      { name: 'Kafka / Event Hubs', icon: `${i}/apachekafka.svg` },
+      { name: 'Kafka', icon: `${i}/apachekafka.svg` },
       { name: 'Databricks', icon: `${i}/databricks.svg` },
       { name: 'Delta Lake', icon: `${i}/apacheparquet.svg` },
     ],

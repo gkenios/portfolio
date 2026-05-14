@@ -47,7 +47,7 @@ export function Header({ titleMapping, isDark, onToggleTheme }: HeaderProps) {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -100, opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 300, damping: 20, mass: 0.5 }}
+            transition={{ type: 'spring', stiffness: 900, damping: 35, mass: 0.15 }}
             className={`fixed top-4 right-4 md:right-auto md:left-1/2 z-50 w-fit md:-translate-x-1/2 rounded-xl px-4 py-2 transition-all duration-300 ${
               isScrolled
                 ? 'bg-bg/70 backdrop-blur-md border border-border-main/40 shadow-lg'
