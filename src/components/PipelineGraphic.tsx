@@ -1,34 +1,15 @@
 export function PipelineGraphic() {
-  const dv = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons';
-  const si = 'https://cdn.simpleicons.org';
+  const i = '/icons';
 
   const nodes = [
-    { cx: 70, cy: 90, r: 26, accent: false, icon: `${dv}/apachekafka/apachekafka-original.svg` },
-    { cx: 70, cy: 210, r: 26, accent: false, icon: `${si}/googlesheets` },
-    {
-      cx: 70,
-      cy: 330,
-      r: 26,
-      accent: false,
-      icon: `${dv}/azuresqldatabase/azuresqldatabase-original.svg`,
-    },
-    { cx: 220, cy: 150, r: 26, accent: false, icon: `${si}/databricks` },
-    { cx: 220, cy: 270, r: 26, accent: false, icon: `${si}/snowflake` },
-    { cx: 370, cy: 210, r: 32, accent: true, icon: `${si}/apacheparquet` },
-    {
-      cx: 490,
-      cy: 130,
-      r: 24,
-      accent: false,
-      icon: `https://api.iconify.design/logos:microsoft-power-bi.svg`,
-    },
-    {
-      cx: 490,
-      cy: 290,
-      r: 24,
-      accent: false,
-      icon: `https://api.iconify.design/logos:tableau-icon.svg`,
-    },
+    { cx: 70, cy: 90, r: 26, accent: false, icon: `${i}/apachekafka.svg` },
+    { cx: 70, cy: 210, r: 26, accent: false, icon: `${i}/googlesheets.svg` },
+    { cx: 70, cy: 330, r: 26, accent: false, icon: `${i}/azuresqldatabase.svg` },
+    { cx: 220, cy: 150, r: 26, accent: false, icon: `${i}/databricks.svg` },
+    { cx: 220, cy: 270, r: 26, accent: false, icon: `${i}/snowflake.svg` },
+    { cx: 370, cy: 210, r: 32, accent: true, icon: `${i}/apacheparquet.svg` },
+    { cx: 490, cy: 130, r: 24, accent: false, icon: `${i}/powerbi.svg` },
+    { cx: 490, cy: 290, r: 24, accent: false, icon: `${i}/tableau.svg` },
   ];
 
   const edges = [
