@@ -10,6 +10,7 @@ import {
   Skills,
 } from './components';
 import { EDUCATION_ENTRIES, EXPERIENCE_ENTRIES, SKILLS_CATEGORIES } from './data';
+import { useTheme } from './lib/useTheme';
 
 const NAV_ITEMS = {
   intro: 'Intro',
@@ -20,10 +21,12 @@ const NAV_ITEMS = {
 };
 
 export default function App() {
+  const { isDark, toggle } = useTheme();
+
   return (
     <div className="min-h-screen bg-bg text-foreground font-sans selection:bg-accent selection:text-black">
       <ScrollProgress />
-      <Header titleMapping={NAV_ITEMS} />
+      <Header titleMapping={NAV_ITEMS} isDark={isDark} onToggleTheme={toggle} />
       <Intro />
 
       <Section id="skills" label={NAV_ITEMS.skills} title="Keywords I know well." subtle>
