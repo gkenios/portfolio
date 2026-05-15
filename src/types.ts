@@ -42,6 +42,10 @@ export type NestedExperienceEntry = FlatExperienceEntry & {
 
 export type ExperienceEntry = FlatExperienceEntry | NestedExperienceEntry;
 
+export function isNestedExperienceEntry(entry: ExperienceEntry): entry is NestedExperienceEntry {
+  return 'projects' in entry && Array.isArray((entry as NestedExperienceEntry).projects);
+}
+
 // Skills
 export type SkillItem = {
   name: string;
