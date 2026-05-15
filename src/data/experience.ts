@@ -35,7 +35,7 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
         endYear: 2024,
         description: [
           'Spearheaded the first NN GenAI project in production, resulting in the first SLA between NN and one of its ventures, by leading the design and development of the infrastructure, the databases, and the APIs, in a team of 4 engineers.',
-          'Optimized the sofware delivery lifecycle, reducing manual developer hours by ~4 hours/week, by setting up self-hosted runners within the network, uptime monitoring & alerting, and rigorous framework of unit, integration and quality tests.',
+          'Optimized the software delivery lifecycle, reducing manual developer hours by ~4 hours/week, by setting up self-hosted runners within the network, uptime monitoring & alerting, and rigorous framework of unit, integration and quality tests.',
           'Created actionable insights for the business and our clients, by developing a website of embedded PowerBI dashboards to share key metrics internally or externally, with a custom OAuth solution.',
         ],
       },
