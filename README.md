@@ -58,6 +58,7 @@ src/
 │   └── Footer           # Footer with contact links
 ├── data/                # All content — edit here to update the site
 │   ├── me.ts            # Name, role, bio, contact links, CV URL
+│   ├── sections.ts      # Section titles and descriptions
 │   ├── skills.ts        # Skill categories and icon paths
 │   ├── experience.ts    # Work history
 │   ├── education.ts     # Academic background
@@ -89,6 +90,7 @@ npm run preview
 All site content lives in `src/data/`. No component code needs to change for typical updates:
 
 - **Personal info, bio, CV link** → `src/data/me.ts`
+- **Section titles & descriptions** → `src/data/sections.ts`
 - **Skills** → `src/data/skills.ts`
 - **Work experience** → `src/data/experience.ts`
 - **Education** → `src/data/education.ts`
