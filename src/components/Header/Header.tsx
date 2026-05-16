@@ -91,7 +91,11 @@ export function Header({ titleMapping, isDark, onToggleTheme }: HeaderProps) {
           </motion.header>
         )}
       </AnimatePresence>
-      <HamburgerDropdown titleMapping={titleMapping} mobileOpen={mobileOpen} onClick={handleNavClick} />
+      <HamburgerDropdown
+        titleMapping={titleMapping}
+        mobileOpen={mobileOpen}
+        onClick={handleNavClick}
+      />
     </>
   );
 }

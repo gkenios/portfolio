@@ -14,6 +14,5 @@ export function LinkedinIcon({ href, borderClassName, svgClassName, children }: 
       </svg>
       {children}
     </a>
-
   );
 }

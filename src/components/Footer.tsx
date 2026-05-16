@@ -1,7 +1,6 @@
 import { DynamicIcon } from './ContactIcons';
 import { CONTACT_DETAILS, FULL_NAME } from '../data';
 
-
 type FooterProps = {
   subtle?: boolean;
 };

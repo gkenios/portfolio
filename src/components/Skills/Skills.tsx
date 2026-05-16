@@ -19,7 +19,7 @@ export function Skills({ categories }: SkillsProps) {
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
           // ADDED: A dynamic transition delay based on the column index
-          transition={{ delay: index * 0.1, duration: 0.4 }} 
+          transition={{ delay: index * 0.1, duration: 0.4 }}
         >
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-dim mb-3">
             {cat.label}

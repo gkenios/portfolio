@@ -3,4 +3,4 @@ export type IconProps = {
   borderClassName: string;
   svgClassName?: string;
   children?: React.ReactNode;
-}
+};
