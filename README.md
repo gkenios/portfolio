@@ -1,13 +1,13 @@
 # Georgios Gkenios — Personal Portfolio
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Deploy](https://github.com/gkenios/portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/gkenios/portfolio/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Deployment](https://github.com/gkenios/portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/gkenios/portfolio/actions/workflows/deploy.yml)
 
-A personal portfolio website built with React, TypeScript, and Vite. Showcases skills, work experience, education, and hobbies with smooth animations and a clean, responsive design. Built for both desktop and mobile.
+*A personal portfolio website built with React, TypeScript, and Vite. Showcases skills, work experience, education, and hobbies with smooth animations and a clean, responsive design. Built for both desktop and mobile.*
 
 ---
 
-**Live site:** [gkenios.com](https://gkenios.com)
+**Portfolio:** [gkenios.com](https://gkenios.com)
 
 ---
 
