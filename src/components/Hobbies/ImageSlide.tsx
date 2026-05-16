@@ -1,14 +1,9 @@
-import type { ImageHobby } from '../../types';
+import type { SlideProps } from './types';
 
-type ImageSlideProps = {
-  hobby: ImageHobby;
-  isCenter: boolean;
-};
-
-export function ImageSlide({ hobby, isCenter }: ImageSlideProps) {
+export function ImageSlide({ hobby, isCenter }: SlideProps) {
   return (
     <img
-      src={hobby.image}
+      src={hobby.source}
       alt={hobby.title}
       className="w-full h-full object-contain p-6"
       style={{

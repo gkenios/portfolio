@@ -54,23 +54,13 @@ export type SkillCategory = {
 };
 
 // About
-export type ImageHobby = {
-  type: 'image';
+export type Hobby = {
+  type: 'image' | 'terminal';
   title: string;
   text: string;
   accentColor: string;
-  image: string;
+  source: string;
 };
-
-export type TerminalHobby = {
-  type: 'terminal';
-  title: string;
-  text: string;
-  accentColor: string;
-  codeSnippet: string;
-};
-
-export type Hobby = ImageHobby | TerminalHobby;
 
 // Contact
 export type ContactDetails = {

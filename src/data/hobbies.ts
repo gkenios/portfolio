@@ -9,21 +9,21 @@ export const HOBBIES: Hobby[] = [
     title: 'Run.',
     text: 'Running is my way to distress. My left knee is "broken", but my spirit is not.',
     accentColor: '#f59e0b',
-    image: ShoesImg,
+    source: ShoesImg,
   },
   {
     type: 'image', // Can be 'image' or 'terminal'
     title: 'Watch.',
     text: 'No-netflix, go-to-cinema type of guy. One of my favourite movies is Inception.',
     accentColor: '#c084fc',
-    image: FilmImg,
+    source: FilmImg,
   },
   {
     type: 'terminal', // Can be 'image' or 'terminal'
     title: 'Code.',
-    text: 'Side project almost finished? That means no sleep. Who needs sleep anyway?',
+    text: 'Weird side project almost finished? That means no sleep. Who needs sleep anyway?',
     accentColor: '#34d399',
-    codeSnippet: `from pyspark.sql import SparkSession
+    source: `from pyspark.sql import SparkSession
 
 spark = (SparkSession
   .builder

@@ -1,12 +1,7 @@
 import { TerminalWindow } from './TerminalWindow';
-import type { TerminalHobby } from '../../types';
+import type { SlideProps } from './types';
 
-type TerminalSlideProps = {
-  hobby: TerminalHobby;
-  isCenter: boolean;
-};
-
-export function TerminalSlide({ hobby, isCenter }: TerminalSlideProps) {
+export function TerminalSlide({ hobby, isCenter }: SlideProps) {
   return (
     <div
       className="w-full h-full flex items-center justify-center p-7"
@@ -16,7 +11,7 @@ export function TerminalSlide({ hobby, isCenter }: TerminalSlideProps) {
       }}
     >
       <div className="w-full h-full">
-        <TerminalWindow codeSnippet={hobby.codeSnippet} accentColor={hobby.accentColor} />
+        <TerminalWindow codeSnippet={hobby.source} accentColor={hobby.accentColor} />
       </div>
     </div>
   );
