@@ -1,25 +1,6 @@
-import { Mail } from 'lucide-react';
-
+import { DynamicIcon } from './ContactIcons';
 import { CONTACT_DETAILS, FULL_NAME } from '../data';
-import { GithubIcon, LinkedinIcon } from './Icons';
 
-const links = [
-  {
-    Icon: Mail,
-    label: 'Email',
-    href: `mailto:${CONTACT_DETAILS.email}`,
-  },
-  {
-    Icon: GithubIcon,
-    label: 'GitHub',
-    href: CONTACT_DETAILS.github,
-  },
-  {
-    Icon: LinkedinIcon,
-    label: 'LinkedIn',
-    href: CONTACT_DETAILS.linkedin,
-  },
-] as const;
 
 type FooterProps = {
   subtle?: boolean;
@@ -33,17 +14,17 @@ export function Footer({ subtle = false }: FooterProps) {
           © {new Date().getFullYear()} {FULL_NAME}. All rights reserved.
         </p>
         <div className="flex gap-6">
-          {links.map(({ Icon, label, href }) => (
-            <a
-              key={label}
-              href={href}
-              target={href.startsWith('mailto') ? undefined : '_blank'}
-              rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-              className="flex items-center gap-2 text-dim hover:text-accent transition-colors duration-200"
+          {/* Iterate over contact details and render icons */}
+          {Object.entries(CONTACT_DETAILS).map(([key, value]) => (
+            <DynamicIcon
+              key={key}
+              name={key as keyof typeof CONTACT_DETAILS}
+              href={value}
+              borderClassName="flex items-center gap-2 text-dim hover:text-accent transition-colors duration-200"
+              svgClassName="w-4 h-4"
             >
-              <Icon className="w-4 h-4" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em]">{label}</span>
-            </a>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em]">{key}</span>
+            </DynamicIcon>
           ))}
         </div>
       </div>
