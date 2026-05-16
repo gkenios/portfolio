@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Deployment](https://github.com/gkenios/portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/gkenios/portfolio/actions/workflows/deploy.yml)
 
-*A personal portfolio website built with React, TypeScript, and Vite. Showcases skills, work experience, education, and hobbies with smooth animations and a clean, responsive design. Built for both desktop and mobile.*
+_A personal portfolio website built with React, TypeScript, and Vite. Showcases skills, work experience, education, and hobbies with smooth animations and a clean, responsive design. Built for both desktop and mobile._
 
 ---
 
@@ -26,17 +26,17 @@
 
 ## Features
 
-| Feature | Description |
-| ------- | ----------- |
-| Sections | Intro, Skills, Experience, Education, Hobbies, Footer |
-| Dark / light theme | Persisted in `localStorage`, with system preference as the initial fallback |
-| Scroll progress bar | Fixed indicator at the top of the page |
-| Sticky navigation | Hamburger dropdown on mobile, inline links on desktop |
-| Framer Motion animations | Fade-up on scroll for every section and staggered children |
-| Nested experience entries | Support for roles with sub-projects under the same company, ideal for consultancy or freelance work |
-| Hobby carousel cards | Image-based or terminal-style cards rotating in 3D space, with auto-play and manual controls |
-| SEO | `<meta>` tags and JSON-LD `Person` schema injected at build time via a custom Vite plugin, driven by `src/data/me.ts` |
-| Sitemap & robots.txt | Included in `public/` |
+| Feature                   | Description                                                                                                           |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Sections                  | Intro, Skills, Experience, Education, Hobbies, Footer                                                                 |
+| Dark / light theme        | Persisted in `localStorage`, with system preference as the initial fallback                                           |
+| Scroll progress bar       | Fixed indicator at the top of the page                                                                                |
+| Sticky navigation         | Hamburger dropdown on mobile, inline links on desktop                                                                 |
+| Framer Motion animations  | Fade-up on scroll for every section and staggered children                                                            |
+| Nested experience entries | Support for roles with sub-projects under the same company, ideal for consultancy or freelance work                   |
+| Hobby carousel cards      | Image-based or terminal-style cards rotating in 3D space, with auto-play and manual controls                          |
+| SEO                       | `<meta>` tags and JSON-LD `Person` schema injected at build time via a custom Vite plugin, driven by `src/data/me.ts` |
+| Sitemap & robots.txt      | Included in `public/`                                                                                                 |
 
 ## Project Structure
 
