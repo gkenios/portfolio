@@ -26,15 +26,17 @@
 
 ## Features
 
-- **Sections** — Intro, Skills, Experience, Education, Hobbies, Footer
-- **Dark / light theme** — Persisted in `localStorage`, with system preference as the initial fallback
-- **Scroll progress bar** — Fixed indicator at the top of the page
-- **Sticky navigation** — Hamburger dropdown on mobile, inline links on desktop
-- **Framer Motion animations** — Fade-up on scroll for every section and staggered children
-- **Nested experience entries** — Support for roles with sub-projects under the same company, ideal for consultancy or freelance work.
-- **Hobby carousel cards** — Image-based or terminal-style cards rotating in 3D space, with auto-play and manual controls.
-- **SEO** — `<meta>` tags and JSON-LD `Person` schema injected at build time via a custom Vite plugin, driven by `src/data/me.ts`
-- **Sitemap & robots.txt** — Included in `public/`
+| Feature | Description |
+| ------- | ----------- |
+| Sections | Intro, Skills, Experience, Education, Hobbies, Footer |
+| Dark / light theme | Persisted in `localStorage`, with system preference as the initial fallback |
+| Scroll progress bar | Fixed indicator at the top of the page |
+| Sticky navigation | Hamburger dropdown on mobile, inline links on desktop |
+| Framer Motion animations | Fade-up on scroll for every section and staggered children |
+| Nested experience entries | Support for roles with sub-projects under the same company, ideal for consultancy or freelance work |
+| Hobby carousel cards | Image-based or terminal-style cards rotating in 3D space, with auto-play and manual controls |
+| SEO | `<meta>` tags and JSON-LD `Person` schema injected at build time via a custom Vite plugin, driven by `src/data/me.ts` |
+| Sitemap & robots.txt | Included in `public/` |
 
 ## Project Structure
 
