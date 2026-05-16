@@ -3,11 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 
 import { ImageSlide } from './ImageSlide';
 import { TerminalSlide } from './TerminalSlide';
-import { HOBBIES } from '../../data';
 import { fadeUp } from '../../lib/animations';
+import type { Hobby } from '../../types';
 
 const INTERVAL = 4500;
-const TOTAL = HOBBIES.length;
 
 const ease: BezierDefinition = [0.25, 0.1, 0.25, 1];
 const cardVariants = {
@@ -46,24 +45,32 @@ const cardVariants = {
 };
 
 /** Returns -1 (left), 0 (center), 1 (right) for direct neighbours, or null for non-visible slides. */
-function getOffset(index: number, active: number): -1 | 0 | 1 | null {
-  const raw = (((index - active) % TOTAL) + TOTAL) % TOTAL;
+function getOffset(index: number, active: number, total: number): -1 | 0 | 1 | null {
+  const raw = (((index - active) % total) + total) % total;
   if (raw === 0) return 0;
   if (raw === 1) return 1;
-  if (raw === TOTAL - 1) return -1;
+  if (raw === total - 1) return -1;
   return null;
 }
 
-export function Hobbies() {
+type HobbiesProps = {
+  hobbies: Hobby[];
+};
+
+export function Hobbies({ hobbies }: HobbiesProps) {
   // State
   const [active, setActive] = useState(0);
   const touchStartX = useRef<number | null>(null);
 
+  // Derived
+  const hobby = hobbies[active];
+  const totalHobbies = hobbies.length;
+
   // Effects
   useEffect(() => {
-    const timer = setTimeout(() => setActive((a) => (a + 1) % TOTAL), INTERVAL);
+    const timer = setTimeout(() => setActive((a) => (a + 1) % totalHobbies), INTERVAL);
     return () => clearTimeout(timer);
-  }, [active]);
+  }, [active, totalHobbies]);
 
   // Handlers
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -73,13 +80,12 @@ export function Hobbies() {
     if (touchStartX.current === null) return;
     const delta = e.changedTouches[0].clientX - touchStartX.current;
     if (Math.abs(delta) > 40) {
-      setActive((a) => (delta < 0 ? (a + 1) % TOTAL : (a - 1 + TOTAL) % TOTAL));
+      setActive((a) =>
+        delta < 0 ? (a + 1) % totalHobbies : (a - 1 + totalHobbies) % totalHobbies
+      );
     }
     touchStartX.current = null;
   };
-
-  // Derived
-  const hobby = HOBBIES[active];
 
   return (
     <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -90,8 +96,8 @@ export function Hobbies() {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-        {HOBBIES.map((h, i) => {
-          const offset = getOffset(i, active);
+        {hobbies.map((h, i) => {
+          const offset = getOffset(i, active, totalHobbies);
           const variant =
             offset === 0 ? 'center' : offset === -1 ? 'left' : offset === 1 ? 'right' : 'hidden';
           const isCenter = offset === 0;

@@ -1,12 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion';
 
 type HamburgerDropdownProps = {
-  titleMapping: Record<string, string>;
+  sections: string[];
   mobileOpen: boolean;
   onClick: () => void;
 };
 
-export function HamburgerDropdown({ titleMapping, mobileOpen, onClick }: HamburgerDropdownProps) {
+export function HamburgerDropdown({ sections, mobileOpen, onClick }: HamburgerDropdownProps) {
   return (
     <AnimatePresence>
       {mobileOpen && (
@@ -31,14 +31,14 @@ export function HamburgerDropdown({ titleMapping, mobileOpen, onClick }: Hamburg
             transition={{ duration: 0.18, ease: 'easeOut' }}
             className="fixed top-16 left-0 right-0 z-40 md:hidden mx-4 rounded-xl bg-bg/95 backdrop-blur-md border border-border-main/40 shadow-lg overflow-hidden"
           >
-            {Object.entries(titleMapping).map(([key, label]) => (
+            {sections.map((section) => (
               <a
-                key={key}
-                href={`#${key}`}
+                key={section}
+                href={`#${section}`}
                 onClick={onClick}
-                className="block px-6 py-3.5 text-sm font-medium text-muted hover:bg-bg-subtle hover:text-foreground transition-colors duration-200 border-b border-border-main/20 last:border-b-0"
+                className="block px-6 py-3.5 text-sm font-medium text-muted hover:bg-bg-subtle hover:text-foreground transition-colors duration-200 border-b border-border-main/20 last:border-b-0 capitalize"
               >
-                {label}
+                {section}
               </a>
             ))}
           </motion.div>

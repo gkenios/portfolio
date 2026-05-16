@@ -5,12 +5,12 @@ import { Sun, Moon, Menu, X } from 'lucide-react';
 import { HamburgerDropdown } from './HamburgerDropdown';
 
 type HeaderProps = {
-  titleMapping: Record<string, string>;
+  sections: string[];
   isDark: boolean;
   onToggleTheme: () => void;
 };
 
-export function Header({ titleMapping, isDark, onToggleTheme }: HeaderProps) {
+export function Header({ sections, isDark, onToggleTheme }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(
     () => typeof window !== 'undefined' && window.scrollY > 20
   );
@@ -59,13 +59,13 @@ export function Header({ titleMapping, isDark, onToggleTheme }: HeaderProps) {
             <nav className="flex items-center gap-0.5">
               {/* Desktop nav links */}
               <div className="hidden md:flex items-center gap-0.5 mr-2">
-                {Object.entries(titleMapping).map(([key, label]) => (
+                {sections.map((section) => (
                   <a
-                    key={key}
-                    href={`#${key}`}
-                    className="px-4 py-1.5 text-sm font-medium text-muted rounded-lg hover:bg-bg-subtle hover:text-foreground transition-colors duration-200"
+                    key={section}
+                    href={`#${section}`}
+                    className="px-4 py-1.5 text-sm font-medium text-muted rounded-lg hover:bg-bg-subtle hover:text-foreground transition-colors duration-200 capitalize"
                   >
-                    {label}
+                    {section}
                   </a>
                 ))}
               </div>
@@ -91,11 +91,7 @@ export function Header({ titleMapping, isDark, onToggleTheme }: HeaderProps) {
           </motion.header>
         )}
       </AnimatePresence>
-      <HamburgerDropdown
-        titleMapping={titleMapping}
-        mobileOpen={mobileOpen}
-        onClick={handleNavClick}
-      />
+      <HamburgerDropdown sections={sections} mobileOpen={mobileOpen} onClick={handleNavClick} />
     </>
   );
 }

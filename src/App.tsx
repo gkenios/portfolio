@@ -9,16 +9,21 @@ import {
   ScrollProgress,
   Skills,
 } from './components';
-import { EDUCATION_ENTRIES, EXPERIENCE_ENTRIES, SKILLS_CATEGORIES } from './data';
+import {
+  ABOUT,
+  CONTACT_DETAILS,
+  CV_URL,
+  EDUCATION_ENTRIES,
+  EXPERIENCE_ENTRIES,
+  FULL_NAME,
+  HOBBIES,
+  ROLE,
+  SECTIONS,
+  SKILLS_CATEGORIES,
+} from './data';
 import { useTheme } from './lib/useTheme';
 
-const NAV_ITEMS = {
-  intro: 'Intro',
-  skills: 'Skills',
-  experience: 'Experience',
-  education: 'Education',
-  hobbies: 'Hobbies',
-};
+const allSections = Object.values(SECTIONS).map((section) => section.title);
 
 export default function App() {
   const { isDark, toggle } = useTheme();
@@ -26,26 +31,32 @@ export default function App() {
   return (
     <div className="min-h-screen bg-bg text-foreground font-sans selection:bg-accent selection:text-black">
       <ScrollProgress />
-      <Header titleMapping={NAV_ITEMS} isDark={isDark} onToggleTheme={toggle} />
-      <Intro />
+      <Header sections={allSections} isDark={isDark} onToggleTheme={toggle} />
+      <Intro
+        fullName={FULL_NAME}
+        role={ROLE}
+        about={ABOUT}
+        cvUrl={CV_URL}
+        contactDetails={CONTACT_DETAILS}
+      />
 
-      <Section id="skills" label={NAV_ITEMS.skills} title="Keywords I know well." subtle>
+      <Section title={SECTIONS.SKILLS.title} description={SECTIONS.SKILLS.description} subtle>
         <Skills categories={SKILLS_CATEGORIES} />
       </Section>
 
-      <Section id="experience" label={NAV_ITEMS.experience} title="My work life backwards.">
+      <Section title={SECTIONS.EXPERIENCE.title} description={SECTIONS.EXPERIENCE.description}>
         <Experience experienceEntries={EXPERIENCE_ENTRIES} />
       </Section>
 
-      <Section id="education" label={NAV_ITEMS.education} title="My studies." subtle>
+      <Section title={SECTIONS.EDUCATION.title} description={SECTIONS.EDUCATION.description} subtle>
         <Education educationEntries={EDUCATION_ENTRIES} />
       </Section>
 
-      <Section id="hobbies" label={NAV_ITEMS.hobbies} title="In my free time.">
-        <Hobbies />
+      <Section title={SECTIONS.HOBBIES.title} description={SECTIONS.HOBBIES.description}>
+        <Hobbies hobbies={HOBBIES} />
       </Section>
 
-      <Footer subtle />
+      <Footer fullName={FULL_NAME} contactDetails={CONTACT_DETAILS} subtle />
     </div>
   );
 }

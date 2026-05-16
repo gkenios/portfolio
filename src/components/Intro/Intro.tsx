@@ -3,10 +3,18 @@ import { ChevronDown, Download } from 'lucide-react';
 
 import { DynamicIcon } from '../ContactIcons';
 import { PipelineGraphic } from './PipelineGraphic';
-import { ABOUT_ME, CONTACT_DETAILS, CV_URL, FULL_NAME, ROLE } from '../../data';
 import { fadeChild } from '../../lib/animations';
+import type { ContactDetails } from '../../types';
 
-export function Intro() {
+type IntroProps = {
+  fullName: string;
+  role: string;
+  about: string;
+  cvUrl: string;
+  contactDetails: ContactDetails;
+};
+
+export function Intro({ fullName, role, about, cvUrl, contactDetails }: IntroProps) {
   const iconSvgClass = 'w-4 h-4';
   const iconBoarderClass =
     'w-10 h-10 rounded-full border border-border-main/40 bg-bg/20 backdrop-blur-sm flex items-center justify-center text-muted hover:bg-bg/70 hover:backdrop-blur-md hover:border-border-main/60 hover:text-foreground hover:shadow-md transition-all duration-300';
@@ -33,13 +41,13 @@ export function Intro() {
             variants={fadeChild}
             className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-5"
           >
-            {ROLE}
+            {role}
           </motion.p>
           <motion.h1
             variants={fadeChild}
             className="text-6xl md:text-7xl xl:text-8xl font-black tracking-tighter leading-[0.97] mb-8"
           >
-            {FULL_NAME.split(' ').map((name, index) => (
+            {fullName.split(' ').map((name, index) => (
               <span key={index}>
                 {name}
                 <br />
@@ -50,11 +58,11 @@ export function Intro() {
             variants={fadeChild}
             className="text-base md:text-lg text-muted leading-relaxed max-w-sm mb-10"
           >
-            {ABOUT_ME}
+            {about}
           </motion.p>
           <motion.a
             variants={fadeChild}
-            href={CV_URL}
+            href={cvUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-accent text-black font-bold px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-accent-hover transition-colors duration-200"
@@ -64,10 +72,10 @@ export function Intro() {
           </motion.a>
           <motion.div variants={fadeChild} className="flex items-center gap-3 mt-6">
             {/* Iterate over contact details and render icons */}
-            {Object.entries(CONTACT_DETAILS).map(([key, value]) => (
+            {Object.entries(contactDetails).map(([key, value]) => (
               <DynamicIcon
                 key={key}
-                name={key as keyof typeof CONTACT_DETAILS}
+                name={key as keyof ContactDetails}
                 href={value}
                 borderClassName={iconBoarderClass}
                 svgClassName={iconSvgClass}
