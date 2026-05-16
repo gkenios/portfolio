@@ -23,10 +23,11 @@ import {
 } from './data';
 import { useTheme } from './lib/useTheme';
 
+const theme = 'dark';  // 'light' | 'dark' | 'system'
 const allSections = Object.values(SECTIONS).map((section) => section.title);
 
 export default function App() {
-  const { isDark, toggle } = useTheme();
+  const { isDark, toggle } = useTheme(theme);
 
   return (
     <div className="min-h-screen bg-bg text-foreground font-sans selection:bg-accent selection:text-black">
