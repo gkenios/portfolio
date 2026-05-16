@@ -98,4 +98,4 @@ Skill icons are served from `public/icons/` as SVGs.
 
 ## Attributions
 
-- The Introduction section along with the transparent header bar is inspired by [Achyut Katiyar](https://github.com/Achyut21/achyut-portfolio)
+- The Introduction section, excluding the pipeline graph, along with the transparent header bar is inspired by [Achyut Katiyar](https://github.com/Achyut21/achyut-portfolio)
