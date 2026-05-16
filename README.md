@@ -1,7 +1,7 @@
 # Georgios Gkenios — Personal Portfolio
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Deployment](https://github.com/gkenios/portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/gkenios/portfolio/actions/workflows/deploy.yml)
+[![Deployment](https://github.com/gkenios/portfolio/actions/workflows/deployment.yml/badge.svg)](https://github.com/gkenios/portfolio/actions/workflows/deployment.yml)
 
 _A personal portfolio website built with React, TypeScript, and Vite. Showcases skills, work experience, education, and hobbies with smooth animations and a clean, responsive design. Built for both desktop and mobile._
 
