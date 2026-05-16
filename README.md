@@ -7,7 +7,7 @@ _A personal portfolio website built with React, TypeScript, and Vite. Showcases 
 
 ---
 
-**Portfolio:** [gkenios.com](https://gkenios.com)
+**Webpage:** [gkenios.com](https://gkenios.com)
 
 ---
 

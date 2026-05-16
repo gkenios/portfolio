@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
-import { FULL_NAME, ROLE, ABOUT_ME, CONTACT_DETAILS } from './src/data/me';
+import { FULL_NAME, ROLE, ABOUT, CONTACT_DETAILS } from './src/data/me';
 
-const description = ABOUT_ME.replace(/\s+/g, ' ').trim();
+const description = ABOUT.replace(/\s+/g, ' ').trim();
 
 const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
