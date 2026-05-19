@@ -24,26 +24,3 @@ export const fadeChild = {
     transition: { duration: 0.7, ease },
   },
 };
-
-/** Container that staggers its children on entry. */
-export const staggerContainer = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-/** Individual item within a stagger container. */
-export const staggerItem = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease,
-    },
-  },
-};

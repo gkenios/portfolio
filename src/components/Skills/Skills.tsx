@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 import { SkillTile } from './SkillTile';
-import { staggerContainer, staggerItem } from '../../lib/animations';
+import { fadeUp } from '../../lib/animations';
 import type { SkillCategory } from '../../types';
 
 type SkillsProps = {
@@ -12,13 +12,13 @@ export function Skills({ categories }: SkillsProps) {
   return (
     <motion.div
       className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10"
-      variants={staggerContainer}
+      variants={fadeUp}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-60px' }}
     >
       {categories.map((cat) => (
-        <motion.div key={cat.label} variants={staggerItem}>
+        <div key={cat.label}>
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-dim mb-3">
             {cat.label}
           </p>
@@ -27,7 +27,7 @@ export function Skills({ categories }: SkillsProps) {
               <SkillTile key={skill.name} name={skill.name} icon={skill.icon} />
             ))}
           </div>
-        </motion.div>
+        </div>
       ))}
     </motion.div>
   );
