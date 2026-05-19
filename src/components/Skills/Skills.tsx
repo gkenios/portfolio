@@ -19,7 +19,7 @@ export function Skills({ categories }: SkillsProps) {
     >
       {categories.map((cat) => (
         <div key={cat.label}>
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-dim mb-3">
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted mb-3">
             {cat.label}
           </p>
           <div className="flex flex-col gap-2">

@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import ViteWebfontDownload from 'vite-plugin-webfont-dl';
 import tailwindcss from '@tailwindcss/vite';
+import react from '@vitejs/plugin-react';
+
 import { FULL_NAME, ROLE, ABOUT, CONTACT_DETAILS } from './src/data/me';
 
 const description = ABOUT.replace(/\s+/g, ' ').trim();
@@ -19,6 +21,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    ViteWebfontDownload(),
     {
       name: 'html-inject',
       transformIndexHtml(html) {

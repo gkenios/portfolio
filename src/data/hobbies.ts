@@ -1,5 +1,5 @@
-import FilmImg from '../assets/film.png';
-import ShoesImg from '../assets/shoes.png';
+import FilmImg from '../assets/film.webp';
+import ShoesImg from '../assets/shoes.webp';
 
 import type { Hobby } from '../types';
 
