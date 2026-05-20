@@ -5,6 +5,8 @@ export function ImageSlide({ hobby, isCenter }: SlideProps) {
     <img
       src={hobby.source}
       alt={hobby.title}
+      loading="lazy"
+      decoding="async"
       className="w-full h-full object-contain p-6"
       style={{
         transition: 'filter 0.5s ease',
