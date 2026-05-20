@@ -1,9 +1,11 @@
+import type React from 'react';
+
 type SkillTileProps = {
   name: string;
-  icon?: string;
+  icon?: React.FC<React.SVGProps<SVGSVGElement>>;
 };
 
-export function SkillTile({ name, icon }: SkillTileProps) {
+export function SkillTile({ name, icon: Icon }: SkillTileProps) {
   const initials = name
     .split(/[\s\-/]/)
     .map((w) => w[0] ?? '')
@@ -13,18 +15,10 @@ export function SkillTile({ name, icon }: SkillTileProps) {
 
   return (
     <div className="group flex items-center gap-4 px-5 py-3 border border-border-main bg-surface hover:border-accent hover:bg-accent-muted transition-all duration-300 cursor-default">
-      {icon && (
-        <img
-          src={icon}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          width="24"
-          height="24"
-          className="w-6 h-6 object-contain shrink-0"
-        />
+      {Icon && (
+        <Icon className="w-6 h-6 object-contain shrink-0" />
       )}
-      {!icon && (
+      {!Icon && (
         <span className="w-6 h-6 flex items-center justify-center text-[9px] font-mono font-bold text-accent border border-accent/25 bg-accent/5 shrink-0">
           {initials}
         </span>

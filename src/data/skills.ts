@@ -1,45 +1,66 @@
 import type { SkillCategory } from '../types';
 
-const i = '/icons';
+import PythonIcon from '../assets/icons/python.svg?react';
+import TypeScriptIcon from '../assets/icons/typescript.svg?react';
+import SQLIcon from '../assets/icons/postgresql.svg?react';
+import TerraformIcon from '../assets/icons/terraform.svg?react';
+
+import AzureIcon from '../assets/icons/azure.svg?react';
+import GCPIcon from '../assets/icons/googlecloud.svg?react';
+import DockerIcon from '../assets/icons/docker.svg?react';
+import KubernetesIcon from '../assets/icons/kubernetes.svg?react';
+import GitHubActionsIcon from '../assets/icons/github.svg?react';
+
+import PySparkIcon from '../assets/icons/apachespark.svg?react';
+import AirflowIcon from '../assets/icons/apacheairflow.svg?react';
+import KafkaIcon from '../assets/icons/apachekafka.svg?react';
+import DatabricksIcon from '../assets/icons/databricks.svg?react';
+import DeltaLakeIcon from '../assets/icons/apacheparquet.svg?react';
+
+import FastAPIIcon from '../assets/icons/fastapi.svg?react';
+import LangGraphIcon from '../assets/icons/langchain.svg?react';
+import ReactIcon from '../assets/icons/react.svg?react';
+import NextjsIcon from '../assets/icons/nextjs.svg?react';
+import MCPIcon from '../assets/icons/modelcontextprotocol.svg?react';
 
 export const SKILLS_CATEGORIES: SkillCategory[] = [
   {
     label: 'Programming Languages',
     items: [
-      { name: 'Python', icon: `${i}/python.svg` },
-      { name: 'TypeScript', icon: `${i}/typescript.svg` },
-      { name: 'SQL', icon: `${i}/postgresql.svg` },
-      { name: 'Terraform', icon: `${i}/terraform.svg` },
+      { name: 'Python', icon: PythonIcon },
+      { name: 'TypeScript', icon: TypeScriptIcon },
+      { name: 'SQL', icon: SQLIcon },
+      { name: 'Terraform', icon: TerraformIcon },
     ],
   },
   {
     label: 'Cloud & DevOps',
     items: [
-      { name: 'Azure', icon: `${i}/azure.svg` },
-      { name: 'GCP', icon: `${i}/googlecloud.svg` },
-      { name: 'Docker', icon: `${i}/docker.svg` },
-      { name: 'Kubernetes', icon: `${i}/kubernetes.svg` },
-      { name: 'GitHub Actions', icon: `${i}/github.svg` },
+      { name: 'Azure', icon: AzureIcon },
+      { name: 'GCP', icon: GCPIcon },
+      { name: 'Docker', icon: DockerIcon },
+      { name: 'Kubernetes', icon: KubernetesIcon },
+      { name: 'GitHub Actions', icon: GitHubActionsIcon },
     ],
   },
   {
     label: 'Data Engineering',
     items: [
-      { name: 'PySpark', icon: `${i}/apachespark.svg` },
-      { name: 'Airflow', icon: `${i}/apacheairflow.svg` },
-      { name: 'Kafka', icon: `${i}/apachekafka.svg` },
-      { name: 'Databricks', icon: `${i}/databricks.svg` },
-      { name: 'Delta Lake', icon: `${i}/apacheparquet.svg` },
+      { name: 'PySpark', icon: PySparkIcon },
+      { name: 'Airflow', icon: AirflowIcon },
+      { name: 'Kafka', icon: KafkaIcon },
+      { name: 'Databricks', icon: DatabricksIcon },
+      { name: 'Delta Lake', icon: DeltaLakeIcon },
     ],
   },
   {
     label: 'AI Engineering',
     items: [
-      { name: 'FastAPI', icon: `${i}/fastapi.svg` },
-      { name: 'LangGraph', icon: `${i}/langchain.svg` },
-      { name: 'React', icon: `${i}/react.svg` },
-      { name: 'Next.js', icon: `${i}/nextjs.svg` },
-      { name: 'MCP / A2A / AGUI', icon: `${i}/modelcontextprotocol.svg` },
+      { name: 'FastAPI', icon: FastAPIIcon },
+      { name: 'LangGraph', icon: LangGraphIcon },
+      { name: 'React', icon: ReactIcon },
+      { name: 'Next.js', icon: NextjsIcon },
+      { name: 'MCP / A2A / AGUI', icon: MCPIcon },
     ],
   },
 ];

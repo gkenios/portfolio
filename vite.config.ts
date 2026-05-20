@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import ViteWebfontDownload from 'vite-plugin-webfont-dl';
+import svgr from 'vite-plugin-svgr';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 
@@ -20,6 +21,7 @@ const jsonLd = JSON.stringify({
 export default defineConfig({
   plugins: [
     react(),
+    svgr(),
     tailwindcss(),
     ViteWebfontDownload(),
     {

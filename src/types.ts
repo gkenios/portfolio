@@ -43,9 +43,11 @@ export type NestedExperienceEntry = FlatExperienceEntry & {
 export type ExperienceEntry = FlatExperienceEntry | NestedExperienceEntry;
 
 // Skills
+import type React from 'react';
+
 export type SkillItem = {
   name: string;
-  icon?: string;
+  icon?: React.FC<React.SVGProps<SVGSVGElement>>;
 };
 
 export type SkillCategory = {
