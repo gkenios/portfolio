@@ -1,15 +1,22 @@
-export function PipelineGraphic() {
-  const i = '/icons';
+import kafkaUrl from '../../assets/icons/apachekafka.svg';
+import sheetsUrl from '../../assets/icons/googlesheets.svg';
+import azureSqlUrl from '../../assets/icons/azuresqldatabase.svg';
+import databricksUrl from '../../assets/icons/databricks.svg';
+import snowflakeUrl from '../../assets/icons/snowflake.svg';
+import parquetUrl from '../../assets/icons/apacheparquet.svg';
+import powerbiUrl from '../../assets/icons/powerbi.svg';
+import tableauUrl from '../../assets/icons/tableau.svg';
 
+export function PipelineGraphic() {
   const nodes = [
-    { cx: 70, cy: 90, r: 26, accent: false, icon: `${i}/apachekafka.svg` },
-    { cx: 70, cy: 210, r: 26, accent: false, icon: `${i}/googlesheets.svg` },
-    { cx: 70, cy: 330, r: 26, accent: false, icon: `${i}/azuresqldatabase.svg` },
-    { cx: 220, cy: 150, r: 26, accent: false, icon: `${i}/databricks.svg` },
-    { cx: 220, cy: 270, r: 26, accent: false, icon: `${i}/snowflake.svg` },
-    { cx: 370, cy: 210, r: 32, accent: true, icon: `${i}/apacheparquet.svg` },
-    { cx: 490, cy: 130, r: 24, accent: false, icon: `${i}/powerbi.svg` },
-    { cx: 490, cy: 290, r: 24, accent: false, icon: `${i}/tableau.svg` },
+    { cx: 70, cy: 90, r: 26, accent: false, icon: kafkaUrl },
+    { cx: 70, cy: 210, r: 26, accent: false, icon: sheetsUrl },
+    { cx: 70, cy: 330, r: 26, accent: false, icon: azureSqlUrl },
+    { cx: 220, cy: 150, r: 26, accent: false, icon: databricksUrl },
+    { cx: 220, cy: 270, r: 26, accent: false, icon: snowflakeUrl },
+    { cx: 370, cy: 210, r: 32, accent: true, icon: parquetUrl },
+    { cx: 490, cy: 130, r: 24, accent: false, icon: powerbiUrl },
+    { cx: 490, cy: 290, r: 24, accent: false, icon: tableauUrl },
   ];
 
   const edges = [
