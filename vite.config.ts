@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite';
-import ViteWebfontDownload from 'vite-plugin-webfont-dl';
 import svgr from 'vite-plugin-svgr';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
@@ -23,7 +22,6 @@ export default defineConfig({
     react(),
     svgr(),
     tailwindcss(),
-    ViteWebfontDownload(),
     {
       name: 'html-inject',
       transformIndexHtml(html) {
