@@ -15,9 +15,7 @@ export function SkillTile({ name, icon: Icon }: SkillTileProps) {
 
   return (
     <div className="group flex items-center gap-4 px-5 py-3 border border-border-main bg-surface hover:border-accent hover:bg-accent-muted transition-all duration-300 cursor-default">
-      {Icon && (
-        <Icon className="w-6 h-6 object-contain shrink-0" />
-      )}
+      {Icon && <Icon className="w-6 h-6 object-contain shrink-0" />}
       {!Icon && (
         <span className="w-6 h-6 flex items-center justify-center text-[9px] font-mono font-bold text-accent border border-accent/25 bg-accent/5 shrink-0">
           {initials}
