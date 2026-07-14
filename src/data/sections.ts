@@ -5,7 +5,7 @@ export const SECTIONS = {
   },
   EXPERIENCE: {
     title: 'experience',
-    description: 'My work life backwards.',
+    description: 'My work journey.',
   },
   EDUCATION: {
     title: 'education',

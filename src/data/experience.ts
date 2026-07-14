@@ -11,6 +11,17 @@ export const EXPERIENCE_ENTRIES: ExperienceEntry[] = [
     description: [],
     projects: [
       {
+        role: 'Lead Data Engineer',
+        company: 'TotalEnergies',
+        location: 'The Hague, NL',
+        startMonth: 'Jun',
+        startYear: 2026,
+        endYear: 'Present',
+        description: [
+          'Too soon to write something meaningful.'
+        ],
+      },
+      {
         role: 'Senior/Lead Data Engineer',
         company: 'Shell',
         location: 'The Hague, NL',

@@ -7,7 +7,7 @@ export const HOBBIES: Hobby[] = [
   {
     type: 'image', // Can be 'image' or 'terminal'
     title: 'Run.',
-    text: 'Running is my way to distress. My left knee is "broken", but my spirit is not.',
+    text: 'Running is my way to distress. My favorite running spot is Vondelpark!',
     accentColor: '#f59e0b',
     source: ShoesImg,
   },
@@ -21,7 +21,7 @@ export const HOBBIES: Hobby[] = [
   {
     type: 'terminal', // Can be 'image' or 'terminal'
     title: 'Code.',
-    text: 'Weird side project almost finished? That means no sleep. Who needs sleep anyway?',
+    text: 'I love working on random side projects, from data frameworks to this webpage.',
     accentColor: '#34d399',
     source: `from pyspark.sql import SparkSession
 
